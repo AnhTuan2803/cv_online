@@ -1,4 +1,4 @@
-import projectsFake from "../data";
+import { projectsFake } from "../data";
 
 const ProjectDetailPage = ({ data: { projectId } }) => {
   const currentProject = projectsFake.find(

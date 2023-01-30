@@ -1,10 +1,9 @@
-import projectsFake from "../data";
+import ProjectItem from "./ProjectItem";
 
-const ProjectList = () => {
-  return ` ${projectsFake
-    .map((project) => {
-      return `<div><a href='/project/${project.id}'>${project.name}</a></div>`;
-    })
+const ProjectList = ({ projects }) => {
+  console.log(projects);
+  return ` ${projects
+    ?.map((project) => `<div>${ProjectItem({ project })}</div>`)
     .join("")}`;
 };
 export default ProjectList;

@@ -1,9 +1,10 @@
 import Header from "../components/Header";
 import ProjectList from "../components/ProjectList";
+import { projectsFake } from "../data";
 
 const ProjectsPage = () => {
-  return `Project Page
+  return `Projects Page
   ${Header()}
-  ${ProjectList()}`;
+  ${ProjectList({ projects: projectsFake })}`;
 };
 export default ProjectsPage;

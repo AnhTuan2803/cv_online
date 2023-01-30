@@ -1,9 +1,7 @@
+import { menus } from "../data";
 const Nav = () => {
-  return /*html*/ `<nav><a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/posts">Posts</a>
-    <a href="/contact">Contact</a>
+  return `<nav>
+  ${menus?.map((menu) => `<a href="${menu.link}">${menu.name}</a>`).join("")}
     </nav>`;
 };
 export default Nav;

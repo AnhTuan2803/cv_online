@@ -1,3 +1,10 @@
+const menus = [
+  { id: 1, name: "Trang chủ", link: "/" },
+  { id: 2, name: "Dự án", link: "/projects" },
+  { id: 3, name: "Bài viết", link: "/posts" },
+  { id: 4, name: "Liên hệ", link: "/contact" },
+];
+
 const projectsFake = [
   {
     id: 1,
@@ -11,5 +18,4 @@ const projectsFake = [
   { id: 2, name: "Dự án mẫu", author: "Tuấn" },
   { id: 3, name: "Dự án Tốt nghiệp", author: "Tuấn" },
 ];
-
-export default projectsFake;
+export { projectsFake, menus };

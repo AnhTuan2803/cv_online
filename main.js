@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import { render, router } from "./src/lib";
 import AboutPage from "./src/pages/about";
 import ContactPage from "./src/pages/contact";
@@ -16,8 +18,6 @@ router.on("/contact", () => render(ContactPage, app));
 router.on("/posts", () => render(PostsPage, app));
 router.on("/post/:postId", () => render(PostDetailPage, app));
 router.on("/projects", () => render(ProjectsPage, app));
-router.on("/project/:projectId", (params) =>
-  render(ProjectDetailPage(params), app)
-);
+router.on("/project/:projectId", (params) => render(() =>  ProjectDetailPage(params), app));
 router.notFound(() => render(NotFoundPage, app));
 router.resolve();
