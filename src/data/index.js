@@ -1,8 +1,9 @@
 const menus = [
-  { id: 1, name: "Trang chủ", link: "/" },
-  { id: 2, name: "Dự án", link: "/projects" },
-  { id: 3, name: "Bài viết", link: "/posts" },
-  { id: 4, name: "Liên hệ", link: "/contact" },
+  { id: 1, name: "About", link: "/" },
+  { id: 2, name: "Resume", link: "/resume" },
+  { id: 3, name: "Projects", link: "/projects" },
+  { id: 4, name: "Blog", link: "/blog" },
+  { id: 5, name: "Contact", link: "/contact" },
 ];
 
 const projectsFake = [

@@ -1,29 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phạm Anh Tuấn</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="utf-8" />
+    <title>MyCV</title>
+
+    <!-- Meta Data -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="author" content="ArtTemplate" />
+    <meta name="description" content="vCard" /> -->
+
+    <!-- Favicons -->
+    <!-- <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../assets/images/favicons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="../assets/images/favicons/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../assets/images/favicons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="../assets/images/favicons/apple-touch-icon-57x57.png"
+    /> -->
+    <!-- <link
+      rel="shortcut icon"
+      href="../assets/images/favicons/favicon.png"
+      type="image/png"
+    /> -->
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="../assets/styles/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/styles/style-dark.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/demo/style-demo.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Fontawesome icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
-    <div class="dropdown">
-      <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
+  <body class="bg-triangles tw-bg-[#272333]">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader__wrap">
+        <div class="circle-pulse">
+          <div class="circle-pulse__1"></div>
+          <div class="circle-pulse__2"></div>
+        </div>
+        <div class="preloader__progress"><span></span></div>
+      </div>
     </div>
-    <div id="app" class="tw-bg-red-500"></div>
-    <script type="module" src="/main.js"></script>
+    <main class="main">
+      <div class="container gutter-top">
+        <div id="app" class="row sticky-parent">
+          <!-- Nhận dữ liệu -->
+        </div>
+      </div>
+    </main>
+    <div class="back-to-top"></div>
+    <!-- JavaScripts -->
+    <script type="module" src="./src/main.js"></script>
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/plugins.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <!-- <script src="../assets/js/mapbox.init.js"></script> -->
+    <script src="../assets/demo/plugins-demo.js"></script>
   </body>
 </html>
