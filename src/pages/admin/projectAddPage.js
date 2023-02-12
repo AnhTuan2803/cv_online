@@ -1,31 +1,25 @@
+import { addProject } from "@/api/project";
 import { router, useEffect } from "@/lib";
 
 const projectAddPage = () => {
   document.title = "MyCV - Admin Project Add";
-  // const projects = JSON.parse(localStorage.getItem("myProjects")) || [];
 
   useEffect(() => {
     const sform = document.querySelector("#_form");
     const projectName = document.querySelector("#projectName");
     const projectAuthor = document.querySelector("#projectAuthor");
-    sform.addEventListener("submit", function (e) {
+    sform.addEventListener("submit", async function (e) {
       e.preventDefault();
-      const project = {
-        name: projectName.value,
-        author: projectAuthor.value,
-      };
-      fetch("http://localhost:3000/projects", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(project),
-      })
-        .then(() => router.navigate("admin/projects"))
-        .catch((error) => console.log(error));
-      // projects.push(project);
-      // localStorage.setItem("myProjects", JSON.stringify(projects));
-      // router.navigate("admin/projects");
+      try {
+        const project = {
+          name: projectName.value,
+          author: projectAuthor.value,
+        };
+        await addProject(project);
+        router.navigate("admin/projects");
+      } catch (error) {
+        console.log(error);
+      }
     });
   });
 

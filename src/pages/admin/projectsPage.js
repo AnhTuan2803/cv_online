@@ -1,3 +1,4 @@
+import { deleteProject, getProjects } from "@/api/project";
 import { useEffect, useState } from "@/lib";
 
 const projectsPage = () => {
@@ -5,24 +6,30 @@ const projectsPage = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-
-    fetch("http://localhost:3000/projects")
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => console.log(error));
+    (async () => {
+      try {
+        const { data } = await getProjects();
+        setData(data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
 
   useEffect(() => {
     const btns = document.querySelectorAll(".btn-remove");
     for (const btn of btns) {
-      btn.addEventListener("click", function () {
-        const id = btn.dataset.id;
-        fetch(`http://localhost:3000/projects/${id}`, {
-          method: "DELETE",
-        }).then(() => {
+      btn.addEventListener("click", async function () {
+        try {
+          const id = this.dataset.id;
+          // xóa trên server
+          await deleteProject(id);
+          // xóa client
           const newProjects = data.filter((project) => project.id != id);
           setData(newProjects);
-        });
+        } catch (error) {
+          console.log(error);
+        }
       });
     }
   });

@@ -1,3 +1,4 @@
+import { getProject, updateProject } from "@/api/project";
 import { router, useEffect, useState } from "@/lib";
 
 const projectEditPage = ({ id }) => {
@@ -5,32 +6,35 @@ const projectEditPage = ({ id }) => {
   const [project, setProject] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:3000/projects/${id}`)
-      .then((response) => response.json())
-      .then((data) => setProject(data))
-      .catch((error) => console.log(error));
+    (async () => {
+      try {
+        const { data } = await getProject(id);
+        setProject(data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
+
   useEffect(() => {
     const form = document.querySelector("#_form");
     const projectName = document.querySelector("#projectName");
     const projectAuthor = document.querySelector("#projectAuthor");
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const newProject = {
-        name: projectName.value,
-        author: projectAuthor.value,
-      };
-      // setTimeout
-      fetch(`http://localhost:3000/projects/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newProject),
-      })
-        .then(() => router.navigate("/admin/projects"))
-        .catch((error) => console.log(error));
+      try {
+        const newProject = {
+          id,
+          name: projectName.value,
+          author: projectAuthor.value,
+        };
+        // setTimeout
+        await updateProject(newProject);
+        router.navigate("/admin/projects");
+      } catch (error) {
+        console.log(error);
+      }
     });
   });
 
