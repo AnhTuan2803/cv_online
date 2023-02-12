@@ -1,4 +1,4 @@
-import { menus } from "@/data";
+import menus from "@/data";
 const Menus = () => {
   return /*html*/ `
   <!-- Menu -->

@@ -1,10 +1,12 @@
 import Footer from "@/components/Footer";
 import Menus from "@/components/Menus";
+import ProjectList from "@/components/ProjectList";
 import Sidebar from "@/components/Sidebar";
 import { useEffect } from "@/lib";
 
 const ProjectsPage = () => {
   document.title = "MyCV - Projects";
+  const projects = JSON.parse(localStorage.getItem("myProjects")) || [];
   useEffect(() => {
     const active = document.querySelector(".Projects");
     active.className = "active tw-no-underline";
@@ -40,6 +42,8 @@ const ProjectsPage = () => {
     <!-- Content -->
     <div class="gallery-grid js-masonry js-filter-container">
         <div class="gutter-sizer"></div>
+       <!-- Item -->
+       ${ProjectList({ projects })}
         <!-- Item 1 -->
         <figure class="gallery-grid__item category-concept">
           <div class="gallery-grid__image-wrap">
@@ -50,6 +54,7 @@ const ProjectsPage = () => {
           <span class="gallery-grid__category">Concept</span>
         </figcaption>
                       </figure>
+
 
         <!-- Item 2 -->
         <figure class="gallery-grid__item category-concept">
