@@ -1,24 +1,20 @@
+// import { getMenus } from "@/api/menus";
+// import { useEffect, useState } from "@/lib";
+import MenuItem from "./MenuItem";
 import menus from "@/data";
+
 const Menus = () => {
-  return /*html*/ `
-  <!-- Menu -->
-  <div class="circle-menu">
-    <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-</div>
-<div class="inner-menu js-menu tw-max-w-xl">
-    <ul class="nav">
-    ${menus
-      ?.map(
-        (menu) =>
-          `<li class="nav__item"><a class="tw-no-underline ${menu.name}" href="${menu.link}">${menu.name}</a></li>`
-      )
-      .join("")}
-    </ul>
-</div>
-    `;
+  // const [menus, setMenus] = useState([]);
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const { data } = await getMenus();
+  //       setMenus(data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   })();
+  // }, []);
+  return /*html*/ `${menus?.map((menu) => MenuItem({ menu })).join("")}`;
 };
 export default Menus;

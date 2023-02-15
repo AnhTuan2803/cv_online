@@ -12,13 +12,37 @@ const ProjectsPage = () => {
     active.className = "active tw-no-underline";
   });
   return /*html*/ `
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader__wrap">
+        <div class="circle-pulse">
+          <div class="circle-pulse__1"></div>
+          <div class="circle-pulse__2"></div>
+        </div>
+        <div class="preloader__progress"><span></span></div>
+      </div>
+    </div>
+    <main class="main">
+      <div class="container gutter-top">
+        <div class="row sticky-parent">
    <!-- Sidebar -->
    ${Sidebar()}
   <!-- Content -->
   <div class="col-12 col-md-12 col-xl-9">
   <div class="box shadow pb-0">
     <!-- Menu -->
-      ${Menus()}
+    <div class="circle-menu">
+    <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+</div>
+<div class="inner-menu js-menu tw-max-w-xl">
+<ul class="nav">
+${Menus()}
+</ul>
+</div>
     <!-- About -->
   <div class="pb-2">
               <h1 class="title title--h1 first-title title__separate">Projects</h1>
@@ -148,6 +172,11 @@ const ProjectsPage = () => {
 </div>
 <!-- Footer -->
   ${Footer()}
-  </div>`;
+  </div>
+  </div>
+  </div>
+</main>
+<div class="back-to-top"></div>
+  `;
 };
 export default ProjectsPage;

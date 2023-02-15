@@ -26,6 +26,9 @@ const Sidebar = () => {
                 <li class="contacts-block__item tw-text-[#DEDDE0]" data-toggle="tooltip" data-placement="top" title="Address">
                 <i class="fa-sharp fa-solid fa-location-dot tw-ml-[2px] tw-mr-[16px]"></i>HaNoi, VietNam
               </li>
+              <li class="contacts-block__item tw-text-[#DEDDE0]" data-toggle="tooltip" data-placement="top" title="Education">
+              <i class="fa-solid fa-graduation-cap tw-mr-[9px]"></i>FPT Polytechnic
+            </li>
                 <li class="contacts-block__item tw-text-[#DEDDE0]" data-toggle="tooltip" data-placement="top" title="E-mail">
                   <a href="mailto:tuanpaph20520@fpt.edu.vn"><i class="fa-solid fa-envelope tw-mr-[14px]"></i>tuanpaph20520@fpt.edu.vn</a>
               </li>
