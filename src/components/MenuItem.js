@@ -1,5 +1,6 @@
 const MenuItem = ({ menu }) => {
-  return `<li class="nav__item"><a class="tw-no-underline ${menu.name}" href="${menu.link}">${menu.name}</a></li>`;
+  return `
+  <li class="nav__item"><a class="tw-no-underline" href="${menu.link}" data-navigo >${menu.name}</a></li>`;
 };
 
 export default MenuItem;

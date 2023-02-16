@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const instance = axios.create({ baseURL: "http://localhost:3000" });
+const instance = axios.create({
+  baseURL: "https://fdtxqk-8080.preview.csb.app/api",
+});
 
 // // Add a request interceptor
 // axios.interceptors.request.use(

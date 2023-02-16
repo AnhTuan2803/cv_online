@@ -3,22 +3,41 @@
     {
       "name": "Dự án mẫu",
       "author": "Phạm Anh Tuấn",
+      "team": [],
+      "des": "Mô tả đây",
+      "avatar": "",
+      "album": [],
+      "linkGithub": "",
+      "linkPreview": "",
+      "date": "",
+      "tech": [],
       "id": 1
     },
     {
       "name": "Dự án 1",
       "author": "Phạm Anh Tuấn",
+      "team": [],
+      "des": "Mô tả đây",
+      "avatar": "",
+      "album": [],
+      "linkGithub": "",
+      "linkPreview": "",
+      "date": "",
+      "tech": [],
       "id": 2
     },
     {
       "name": "Dự án tốt nghiệp",
       "author": "Phạm Anh Tuấn",
+      "team": [],
+      "des": "Mô tả đây",
+      "avatar": "",
+      "album": [],
+      "linkGithub": "",
+      "linkPreview": "",
+      "date": "",
+      "tech": [],
       "id": 3
-    },
-    {
-      "id": 4,
-      "name": "Dự án demo update",
-      "author": "Tuấn"
     }
   ],
   "menus": [
@@ -47,5 +66,14 @@
       "name": "Contact",
       "link": "/contact"
     }
-  ]
+  ],
+  "proFile": {
+    "name": "Phạm Anh Tuấn",
+    "location": "Frontend Developer",
+    "birthday": "March 28, 2003",
+    "address" : "HaNoi, VietNam",
+    "education": "FPT Polytechnic",
+    "email": "tuanpaph20520@fpt.edu.vn",
+    "phone": "+84 98 7957355"
+  }
 }
