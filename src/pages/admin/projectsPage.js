@@ -1,8 +1,9 @@
 import { deleteProject, getProjects } from "@/api/project";
+import Header from "@/components/admin/Header";
 import { useEffect, useState } from "@/lib";
 
 const projectsPage = () => {
-  document.title = "MyCV - Admin Projects";
+  document.title = "Admin - Projects";
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -34,33 +35,67 @@ const projectsPage = () => {
     }
   });
 
-  return /*html*/ `<div class="container">
-  <h1 class="tw-mb-10 tw-text-[#fff]">Quản lý dự án</h1>
-  <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col" class="tw-text-[#fff]">Stt</th>
-      <th scope="col" class="tw-text-[#fff]">Projects Name</th>
-      <th scope="col"><a class="btn btn-danger tw-mx-6" href="/admin/project-add">Add</a></th>
-    </tr>
-  </thead>
-  <tbody>
-  ${data
-    ?.map(
-      (project, index) => /*html*/ `<tr>
-  <th scope="row" class="tw-text-[#fff]">${index + 1}</th>
-  <td class="tw-text-[#fff]">${project.name}</td>
-  <td width="230px" ><button data-id="${
-    project.id
-  }" class="btn btn-danger btn-remove tw-mx-6">Remove</button><a class="btn btn-danger" href="/admin/project-edit/${
-        project.id
-      }">Edit</a></td>
-</tr>`
-    )
-    .join("")}
-   
-  </tbody>
-</table></div>`;
+  return /*html*/ `
+
+  <div class="tw-max-w-5xl tw-mx-auto">
+  <!-- WRAP CONTAINER -->
+  <div class="wrap-container">
+   ${Header()}
+        <!-- WRAP ARTICLE -->
+        <article class="tw-pb-10">
+        <div class="welcome container tw-my-10 tw-text-center">
+          <h1 class="tw-text-4xl tw-text-[#999] tw-font-bold">
+            Projects Page
+          </h1>
+        </div>
+        <div class="container">
+        <div class="tw-my-4">
+          <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
+            <i class="fa-solid fa-list tw-mr-2"></i>List Project
+          </h3>
+        </div>
+      </div>
+        <div class="tw-py-5">
+          <table class="table container">
+            <thead>
+              <tr class="tw-text-[#fff]">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Date</th>
+                <th scope="col">Technology</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tw-text-[#fff]">
+                <th scope="row">1</th>
+                <td>Dự án mẫu</td>
+                <td>Phạm Anh Tuấn</td>
+                <td>9/9/2022</td>
+                <td>PHP</td>
+                <td class="tw-flex">
+                  <a href="#" style="margin-left: 5px;
+                  margin-right: 5px; padding-left: 2px;
+                  padding-right: 2px;" class="btn btn-danger"
+                    ><i class="fa-solid fa-trash"></i
+                  ></a>
+                  <a href="#" style="margin-left: 5px;
+                  margin-right: 5px; padding-left: 2px;
+                  padding-right: 2px;" class="btn btn-warning"
+                    ><i class="fa-solid fa-pen-to-square"></i
+                  ></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <!-- END WRAP ARTICLE -->
+  </div>
+</div>
+  
+  `;
 };
 
 export default projectsPage;

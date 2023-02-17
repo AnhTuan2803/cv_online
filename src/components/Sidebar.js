@@ -16,7 +16,7 @@ const Sidebar = () => {
   <div class="shadow tw-bg-[#302C40] tw-rounded-[20px]">
   <svg class="avatar" style="border-radius: 33% 67% 63% 37% / 34% 35% 65% 66%" viewBox="0 0 188 188">
                   <g>
-                      <image xlink:href="https://res.cloudinary.com/dugodumc5/image/upload/v1676477913/MyCV/avatar_ghdcwq.jpg" height="100%" width="100%" />
+                      <image xlink:href="${proFile.avatar}" height="100%" width="100%" />
                   </g>
               </svg>
         <div class="text-center">

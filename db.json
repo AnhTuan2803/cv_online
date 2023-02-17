@@ -3,7 +3,6 @@
     {
       "name": "Dự án mẫu",
       "author": "Phạm Anh Tuấn",
-      "team": [],
       "des": "Mô tả đây",
       "avatar": "",
       "album": [],
@@ -16,7 +15,6 @@
     {
       "name": "Dự án 1",
       "author": "Phạm Anh Tuấn",
-      "team": [],
       "des": "Mô tả đây",
       "avatar": "",
       "album": [],
@@ -29,7 +27,6 @@
     {
       "name": "Dự án tốt nghiệp",
       "author": "Phạm Anh Tuấn",
-      "team": [],
       "des": "Mô tả đây",
       "avatar": "",
       "album": [],
@@ -69,6 +66,7 @@
   ],
   "proFile": {
     "name": "Phạm Anh Tuấn",
+    "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477913/MyCV/avatar_ghdcwq.jpg",
     "location": "Frontend Developer",
     "birthday": "March 28, 2003",
     "address" : "HaNoi, VietNam",
