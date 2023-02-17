@@ -72,28 +72,46 @@ body {
     transition: box-shadow .3s ease-in-out;
 }
 .inner-menu{
-    margin-right: -32px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     height: 3.5rem;
-    padding-right: 2rem;
+    padding-right: 2.1rem;
     position: absolute;
     top: 0;
     right: 0;
-    width: 70%;
     z-index: 1;
+}
+.circle-menu{
+    background-color: #0D86FF;
+    border-radius: 50% 1.25rem 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.75rem;
+    z-index: 2;
+}
+.hamburger{
+    cursor: pointer;
+    color: #fff;
+    display: block;
+    font-size: 26px;
+    transition: all 0.5s ease-in-out;
 }
 .nav{
     background: #0D86FF;
     box-shadow: 0 1.5rem 2.5rem rgb(13 134 255 / 5%), 0 0.5rem 1rem rgb(13 134 255 / 5%);
-    
+    padding-right: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     overflow: hidden;
-    border-radius: 40px 20px 40px 2rem;
+    border-radius: 40px 0px 0px 2rem;
 }
 .nav__item{
     margin-right: 1.5rem;

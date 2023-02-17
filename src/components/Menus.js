@@ -15,12 +15,11 @@ const Menus = () => {
     })();
   }, []);
   return /*html*/ `
-  <div class="inner-menu">
-            <ul class="nav">
-
+  <div id="_menu" style="width: 0%; display: none;" class="inner-menu">
+        <ul class="nav">
             ${menus?.map((menu) => MenuItem({ menu })).join("")}
-                        </ul>
-        </div>
+        </ul>
+  </div>
   `;
 };
 export default Menus;
