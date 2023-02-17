@@ -18,21 +18,36 @@ const projectEditPage = ({ id }) => {
   }, []);
 
   useEffect(() => {
-    const form = document.querySelector("#_form");
+    const sform = document.querySelector("#_form");
     const projectName = document.querySelector("#projectName");
     const projectAuthor = document.querySelector("#projectAuthor");
+    const projectDes = document.querySelector("#projectDes");
+    const projectAvatar = document.querySelector("#projectAvatar");
+    const projectAlbum = document.querySelector("#projectAlbum");
+    const linkGithub = document.querySelector("#linkGithub");
+    const linkPreview = document.querySelector("#linkPreview");
+    const projectDate = document.querySelector("#projectDate");
+    const projectTech = document.querySelector("#projectTech");
 
-    form.addEventListener("submit", async (e) => {
+    sform.addEventListener("submit", async (e) => {
       e.preventDefault();
       try {
         const newProject = {
           id,
           name: projectName.value,
           author: projectAuthor.value,
+          des: projectDes.value,
+          avatar: projectAvatar.value,
+          album: projectAlbum.value,
+          linkGithub: linkGithub.value,
+          linkPreview: linkPreview.value,
+          date: projectDate.value,
+          tech: projectTech.value,
         };
         // setTimeout
         await updateProject(newProject);
         router.navigate("/admin/projects");
+        alert("Sửa dự án thành công!");
       } catch (error) {
         console.log(error);
       }
@@ -58,7 +73,7 @@ const projectEditPage = ({ id }) => {
         <i class="fa-solid fa-square-plus tw-mr-1"></i> Edit Project
       </h3>
     </div>
-    <form>
+    <form id="_form">
       <div class="form-group">
         <label
           for="exampleFormControlInput1"
@@ -68,8 +83,9 @@ const projectEditPage = ({ id }) => {
         <input
           type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="projectName"
           placeholder="Enter Project name..."
+          value="${project.name}"
         />
       </div>
       <div class="form-group">
@@ -81,8 +97,9 @@ const projectEditPage = ({ id }) => {
         <input
           type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="projectAuthor"
           placeholder="Enter Author Name..."
+          value="${project.author}"
         />
       </div>
       <div class="form-group">
@@ -91,7 +108,9 @@ const projectEditPage = ({ id }) => {
           class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
           >Description</label
         >
-        <textarea class="form-control" name="" id="" rows="5" placeholder="Enter a short description of the project..."></textarea>
+        <textarea class="form-control" name="" id="projectDes" rows="5" placeholder="Enter a short description of the project...">${
+          project.des
+        }</textarea>
       </div>
       <div class="form-group">
         <label
@@ -102,6 +121,8 @@ const projectEditPage = ({ id }) => {
         <input
         type="file"
         class="form-control"
+        id="projectAvatar"
+        value="${project.avatar}"
       />
       </div>
       <div class="form-group">
@@ -113,6 +134,8 @@ const projectEditPage = ({ id }) => {
         <input
         type="file"
         multiple
+        id="projectAlbum"
+        value="${project.album}"
         class="form-control"
       />
       </div>
@@ -125,7 +148,9 @@ const projectEditPage = ({ id }) => {
         <input
         type="text"
         placeholder="Enter link Github..."
+        id="linkGithub"
         class="form-control"
+        value="${project.linkGithub}"
       />
       </div>
       <div class="form-group">
@@ -137,7 +162,9 @@ const projectEditPage = ({ id }) => {
         <input
         type="text"
         placeholder="Enter link Preview..."
+        id="linkPreview"
         class="form-control"
+        value="${project.linkPreview}"
       />
       </div>
       
@@ -150,8 +177,9 @@ const projectEditPage = ({ id }) => {
         <input
           type="date"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="projectDate"
           placeholder="Enter project date..."
+          value="${project.date}"
         />
       </div>
       <div class="form-group">
@@ -163,8 +191,9 @@ const projectEditPage = ({ id }) => {
         <input
           type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="projectTech"
           placeholder="Enter project Technology..."
+          value="${project.tech}"
         />
       </div>
       <div class="tw-mt-4">

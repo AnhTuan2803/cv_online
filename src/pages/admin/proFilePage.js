@@ -1,7 +1,55 @@
+import { getProFile, updateProFile } from "@/api/proFile";
 import Header from "@/components/admin/Header";
+import { router, useEffect, useState } from "@/lib";
 
 const proFilePage = () => {
   document.title = "Admin - ProFile";
+  const [proFile, setProFile] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getProFile();
+        setProFile(data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    const sform = document.querySelector("#_sform");
+    const name = document.querySelector("#name");
+    const avatar = document.querySelector("#avatar");
+    const location = document.querySelector("#location");
+    const birthday = document.querySelector("#birthday");
+    const address = document.querySelector("#address");
+    const education = document.querySelector("#education");
+    const email = document.querySelector("#email");
+    const phone = document.querySelector("#phone");
+
+    sform.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      try {
+        const newProFile = {
+          name: name.value,
+          avatar: avatar.value,
+          location: location.value,
+          birthday: birthday.value,
+          address: address.value,
+          education: education.value,
+          email: email.value,
+          phone: phone.value,
+        };
+
+        await updateProFile(newProFile);
+        router.navigate("/admin");
+        alert("Sửa thông tin thành công!");
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
 
   return /*html*/ `
   <div class="tw-max-w-5xl tw-mx-auto">
@@ -21,7 +69,7 @@ const proFilePage = () => {
         <i class="fa-solid fa-square-plus tw-mr-1"></i> ProFile
       </h3>
     </div>
-    <form>
+    <form id="_sform">
       <div class="form-group">
         <label
           for="exampleFormControlInput1"
@@ -31,8 +79,9 @@ const proFilePage = () => {
         <input
           type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="name"
           placeholder="Enter Full name..."
+          value="${proFile.name}"
         />
       </div>
       <div class="form-group">
@@ -43,7 +92,9 @@ const proFilePage = () => {
       >
       <input
       type="file"
+      id="avatar"
       class="form-control"
+      
     />
     </div>
       <div class="form-group">
@@ -55,8 +106,9 @@ const proFilePage = () => {
         <input
           type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="location"
           placeholder="Enter Location..."
+          value="${proFile.location}"
         />
       </div>
       <div class="form-group">
@@ -66,10 +118,11 @@ const proFilePage = () => {
           >Birthday</label
         >
         <input
-          type="date"
+          type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="birthday"
           placeholder="Enter Birthday..."
+          value="${proFile.birthday}"
         />
       </div>
     
@@ -84,7 +137,9 @@ const proFilePage = () => {
         <input
         type="text"
         placeholder="Enter Address..."
+        id="address"
         class="form-control"
+        value="${proFile.address}"
       />
       </div>
       <div class="form-group">
@@ -96,7 +151,9 @@ const proFilePage = () => {
         <input
         type="text"
         placeholder="Enter Education..."
+        id="education"
         class="form-control"
+        value="${proFile.education}"
       />
       </div>
       
@@ -109,8 +166,9 @@ const proFilePage = () => {
         <input
           type="email"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="email"
           placeholder="Enter Email..."
+          value="${proFile.email}"
         />
       </div>
 
@@ -123,12 +181,13 @@ const proFilePage = () => {
       <input
         type="text"
         class="form-control"
-        id="exampleFormControlInput1"
+        id="phone"
         placeholder="Enter Phone..."
+        value="${proFile.phone}"
       />
     </div>
       <div class="tw-mt-4">
-        <button class="btn btn-success">Edit ProFile</button>
+        <button class="btn btn-success">Update ProFile</button>
       </div>
     </form>
   </div>

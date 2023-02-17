@@ -21,15 +21,19 @@ const projectsPage = () => {
     const btns = document.querySelectorAll(".btn-remove");
     for (const btn of btns) {
       btn.addEventListener("click", async function () {
-        try {
-          const id = this.dataset.id;
-          // xóa trên server
-          await deleteProject(id);
-          // xóa client
-          const newProjects = data.filter((project) => project.id != id);
-          setData(newProjects);
-        } catch (error) {
-          console.log(error);
+        const check = window.confirm("Bạn có muốn xóa?");
+
+        if (check === true) {
+          try {
+            const id = this.dataset.id;
+            // xóa trên server
+            await deleteProject(id);
+            // xóa client
+            const newProjects = data.filter((project) => project.id != id);
+            setData(newProjects);
+          } catch (error) {
+            console.log(error);
+          }
         }
       });
     }
@@ -68,25 +72,33 @@ const projectsPage = () => {
               </tr>
             </thead>
             <tbody>
-              <tr class="tw-text-[#fff]">
-                <th scope="row">1</th>
-                <td>Dự án mẫu</td>
-                <td>Phạm Anh Tuấn</td>
-                <td>9/9/2022</td>
-                <td>PHP</td>
-                <td class="tw-flex">
-                  <a href="#" style="margin-left: 5px;
-                  margin-right: 5px; padding-left: 2px;
-                  padding-right: 2px;" class="btn btn-danger"
-                    ><i class="fa-solid fa-trash"></i
-                  ></a>
-                  <a href="#" style="margin-left: 5px;
-                  margin-right: 5px; padding-left: 2px;
-                  padding-right: 2px;" class="btn btn-warning"
-                    ><i class="fa-solid fa-pen-to-square"></i
-                  ></a>
-                </td>
-              </tr>
+            ${data
+              ?.map(
+                (project, index) => /*html*/ ` <tr class="tw-text-[#fff]">
+            <th scope="row">${index + 1}</th>
+            <td>${project.name}</td>
+            <td>${project.author}</td>
+            <td>${project.date}</td>
+            <td>${project.tech}</td>
+            <td class="tw-flex">
+              <a data-id="${project.id}" style="margin-left: 5px;
+              margin-right: 5px; padding-left: 2px;
+              padding-right: 2px;" class="btn-remove btn btn-danger"
+                ><i class="fa-solid fa-trash"></i
+              ></a>
+
+              <a href="/admin/project-edit/${
+                project.id
+              }" style="margin-left: 5px;
+              margin-right: 5px; padding-left: 2px;
+              padding-right: 2px;" class="btn btn-warning"
+                ><i class="fa-solid fa-pen-to-square"></i
+              ></a>
+            </td>
+          </tr>`
+              )
+              .join("")}
+             
             </tbody>
           </table>
         </div>

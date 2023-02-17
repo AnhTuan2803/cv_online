@@ -4,4 +4,8 @@ const getProFile = () => {
   return instance.get("/proFile");
 };
 
-export { getProFile };
+const updateProFile = (proFile) => {
+  return instance.put(`/proFile`, proFile);
+};
+
+export { getProFile, updateProFile };

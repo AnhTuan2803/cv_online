@@ -66,15 +66,12 @@ const Header = () => {
                 </ul>
               </li>
 
-              <li class="nav-item dropdown tw-mx-2">
+              <li class="nav-item tw-mx-2">
                 <a
                   class="nav-link"
                   href="/admin/profile"
                   style="color: #999"
                   data-navigo
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
                 >
                   ProFile
                 </a>

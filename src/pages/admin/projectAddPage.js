@@ -9,15 +9,31 @@ const projectAddPage = () => {
     const sform = document.querySelector("#_form");
     const projectName = document.querySelector("#projectName");
     const projectAuthor = document.querySelector("#projectAuthor");
+    const projectDes = document.querySelector("#projectDes");
+    const projectAvatar = document.querySelector("#projectAvatar");
+    const projectAlbum = document.querySelector("#projectAlbum");
+    const linkGithub = document.querySelector("#linkGithub");
+    const linkPreview = document.querySelector("#linkPreview");
+    const projectDate = document.querySelector("#projectDate");
+    const projectTech = document.querySelector("#projectTech");
+
     sform.addEventListener("submit", async function (e) {
       e.preventDefault();
       try {
         const project = {
           name: projectName.value,
           author: projectAuthor.value,
+          des: projectDes.value,
+          avatar: projectAvatar.value,
+          album: projectAlbum.value,
+          linkGithub: linkGithub.value,
+          linkPreview: linkPreview.value,
+          date: projectDate.value,
+          tech: projectTech.value,
         };
         await addProject(project);
         router.navigate("admin/projects");
+        alert("Thêm dự án thành công!");
       } catch (error) {
         console.log(error);
       }
@@ -43,7 +59,7 @@ const projectAddPage = () => {
         <i class="fa-solid fa-square-plus tw-mr-1"></i> Add Project
       </h3>
     </div>
-    <form>
+    <form id="_form">
       <div class="form-group">
         <label
           for="exampleFormControlInput1"
@@ -53,7 +69,7 @@ const projectAddPage = () => {
         <input
           type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="projectName"
           placeholder="Enter Project name..."
         />
       </div>
@@ -66,7 +82,7 @@ const projectAddPage = () => {
         <input
           type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="projectAuthor"
           placeholder="Enter Author Name..."
         />
       </div>
@@ -76,7 +92,7 @@ const projectAddPage = () => {
           class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
           >Description</label
         >
-        <textarea class="form-control" name="" id="" rows="5" placeholder="Enter a short description of the project..."></textarea>
+        <textarea class="form-control" name="" id="projectDes" rows="5" placeholder="Enter a short description of the project..."></textarea>
       </div>
       <div class="form-group">
         <label
@@ -86,6 +102,7 @@ const projectAddPage = () => {
         >
         <input
         type="file"
+        id="projectAvatar"
         class="form-control"
       />
       </div>
@@ -97,6 +114,7 @@ const projectAddPage = () => {
         >
         <input
         type="file"
+        id="projectAlbum"
         multiple
         class="form-control"
       />
@@ -109,6 +127,7 @@ const projectAddPage = () => {
         >
         <input
         type="text"
+        id="linkGithub"
         placeholder="Enter link Github..."
         class="form-control"
       />
@@ -121,6 +140,7 @@ const projectAddPage = () => {
         >
         <input
         type="text"
+        id="linkPreview"
         placeholder="Enter link Preview..."
         class="form-control"
       />
@@ -135,7 +155,7 @@ const projectAddPage = () => {
         <input
           type="date"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="projectDate"
           placeholder="Enter project date..."
         />
       </div>
@@ -148,7 +168,7 @@ const projectAddPage = () => {
         <input
           type="text"
           class="form-control"
-          id="exampleFormControlInput1"
+          id="projectTech"
           placeholder="Enter project Technology..."
         />
       </div>
