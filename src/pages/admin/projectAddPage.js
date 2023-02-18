@@ -1,6 +1,7 @@
 import { addProject } from "@/api/project";
 import Header from "@/components/admin/Header";
 import { router, useEffect } from "@/lib";
+import axios from "axios";
 
 const projectAddPage = () => {
   document.title = "Admin - Project Add";
@@ -20,25 +21,79 @@ const projectAddPage = () => {
     sform.addEventListener("submit", async function (e) {
       e.preventDefault();
       try {
-        const project = {
-          name: projectName.value,
-          author: projectAuthor.value,
-          des: projectDes.value,
-          avatar: projectAvatar.value,
-          album: projectAlbum.value,
-          linkGithub: linkGithub.value,
-          linkPreview: linkPreview.value,
-          date: projectDate.value,
-          tech: projectTech.value,
-        };
-        await addProject(project);
-        router.navigate("admin/projects");
-        alert("Thêm dự án thành công!");
+        // const urls = await uploadFiles(projectAlbum.files);
+        // const url = await uploadFile(projectAvatar.files);
+        console.log(await uploadFile(projectAvatar.files));
+        // const project = {
+        //   name: projectName.value,
+        //   author: projectAuthor.value,
+        //   des: projectDes.value,
+        //   avatar: url,
+        //   album: urls,
+        //   linkGithub: linkGithub.value,
+        //   linkPreview: linkPreview.value,
+        //   date: projectDate.value,
+        //   tech: projectTech.value,
+        // };
+
+        // await addProject(project);
+        // router.navigate("admin/projects");
+        // alert("Thêm dự án thành công!");
       } catch (error) {
         console.log(error);
       }
     });
   });
+
+  const uploadFile = async (file) => {
+    if (file) {
+      const CLOUD_NAME = "dugodumc5";
+      const PRESET_NAME = "mycv-upload";
+      const FOLDER_NAME = "MyCV";
+
+      const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+
+      const formData = new FormData();
+      formData.append("upload_preset", PRESET_NAME);
+      formData.append("folder", FOLDER_NAME);
+
+      formData.append("file", file);
+      const response = await axios.post(api, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      const url = response.data.secure_url;
+      console.log(url);
+      // return url;
+    }
+  };
+
+  // const uploadFiles = async (files) => {
+  //   if (files) {
+  //     const CLOUD_NAME = "dugodumc5";
+  //     const PRESET_NAME = "mycv-upload";
+  //     const FOLDER_NAME = "MyCV";
+  //     const urls = [];
+  //     const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+
+  //     const formData = new FormData();
+  //     formData.append("upload_preset", PRESET_NAME);
+  //     formData.append("folder", FOLDER_NAME);
+
+  //     for (const file of files) {
+  //       console.log(file);
+  //       formData.append("file", file);
+  //       const response = await axios.post(api, formData, {
+  //         headers: {
+  //           "Content-Type": "multipart/form-data",
+  //         },
+  //       });
+  //       urls.push(response.data.secure_url);
+  //     }
+  //     return urls;
+  //   }
+  // };
 
   return /*html*/ `
   <div class="tw-max-w-5xl tw-mx-auto">

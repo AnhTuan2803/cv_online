@@ -7,6 +7,7 @@ const Header = () => {
           <a
             class="navbar-brand tw-font-bold"
             style="color: #fd4312"
+            data-navigo
             href="/"
             ><i class="fa-solid fa-code"></i
           ></a>
@@ -26,6 +27,26 @@ const Header = () => {
             id="navbarSupportedContent"
           >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown tw-mx-2">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              style="color: #999"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+            Categories
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" data-navigo href="#">List Category</a>
+            </li>
+              <li>
+                <a class="dropdown-item" data-navigo href="#">Add Category</a>
+              </li>
+            </ul>
+          </li>
           
               <li class="nav-item dropdown tw-mx-2">
                 <a
@@ -40,10 +61,10 @@ const Header = () => {
                 </a>
                 <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" data-navigo href="/admin/projects">Lists Project</a>
+                  <a class="dropdown-item" data-navigo href="#/admin/projects">List Project</a>
                 </li>
                   <li>
-                    <a class="dropdown-item" data-navigo href="/admin/project-add">Add Project</a>
+                    <a class="dropdown-item" data-navigo href="#/admin/project-add">Add Project</a>
                   </li>
                 </ul>
               </li>
@@ -60,16 +81,16 @@ const Header = () => {
                 </a>
                 <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="#">List Blog</a>
+                  <a class="dropdown-item" data-navigo href="#">List Blog</a>
                 </li>
-                  <li><a class="dropdown-item" href="#">Add Blog</a></li>
+                  <li><a class="dropdown-item" data-navigo href="#">Add Blog</a></li>
                 </ul>
               </li>
 
               <li class="nav-item tw-mx-2">
                 <a
                   class="nav-link"
-                  href="/admin/profile"
+                  href="#/admin/profile"
                   style="color: #999"
                   data-navigo
                 >

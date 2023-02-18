@@ -26,7 +26,7 @@ const AboutPage = () => {
 
   return /*html*/ `
   <main>
-  <div><a class="tw-text-red-500 tw-text-[30px] tw-duration-500 tw-absolute tw-left-[130px] tw-top-[100px]" href="/admin"></div><i class="fa-solid fa-gears"></i></a></div>
+  <div><a class="tw-text-red-500 tw-text-[30px] tw-duration-500 tw-absolute tw-left-[130px] tw-top-[100px]" data-navigo href="#/admin"></div><i class="fa-solid fa-gears"></i></a></div>
   <div class="container tw-pt-[6rem]">
     <div class="row">
       <!-- Sidebar -->

@@ -1,6 +1,7 @@
 import { getProFile, updateProFile } from "@/api/proFile";
 import Header from "@/components/admin/Header";
 import { router, useEffect, useState } from "@/lib";
+import axios from "axios";
 
 const proFilePage = () => {
   document.title = "Admin - ProFile";
@@ -31,9 +32,15 @@ const proFilePage = () => {
     sform.addEventListener("submit", async (e) => {
       e.preventDefault();
       try {
+        let url = "";
+        if (avatar.files.length == 0) {
+          url = avatar.accept;
+        } else {
+          url = await uploadFile(avatar.files);
+        }
         const newProFile = {
           name: name.value,
-          avatar: avatar.value,
+          avatar: url,
           location: location.value,
           birthday: birthday.value,
           address: address.value,
@@ -50,6 +57,31 @@ const proFilePage = () => {
       }
     });
   });
+
+  const uploadFile = async (files) => {
+    if (files) {
+      const CLOUD_NAME = "dugodumc5";
+      const PRESET_NAME = "mycv-upload";
+      const FOLDER_NAME = "MyCV";
+      const urls = [];
+      const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+
+      const formData = new FormData();
+      formData.append("upload_preset", PRESET_NAME);
+      formData.append("folder", FOLDER_NAME);
+
+      for (const file of files) {
+        formData.append("file", file);
+        const response = await axios.post(api, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        urls.push(response.data.secure_url);
+      }
+      return urls[0];
+    }
+  };
 
   return /*html*/ `
   <div class="tw-max-w-5xl tw-mx-auto">
@@ -94,6 +126,7 @@ const proFilePage = () => {
       type="file"
       id="avatar"
       class="form-control"
+      accept="${proFile.avatar}"
       
     />
     </div>

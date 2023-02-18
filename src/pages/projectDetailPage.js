@@ -60,7 +60,9 @@ const ProjectDetailPage = ({ id }) => {
             <!-- Post -->
 						<div class="pb-3">
               <header class="tw-text-center">
-                  <div class="header-post__date tw-text-left">Sep 15, 2019</div>
+                  <div class="header-post__date tw-text-left">${
+                    project.date
+                  }</div>
                               <h1 class="tw-mt-8 tw-mb-[1.5rem] tw-text-[#F1F2F4] tw-font-serif tw-font-bold">${
                                 project.name
                               }</h1>
@@ -97,8 +99,12 @@ const ProjectDetailPage = ({ id }) => {
             </div>
 
             <footer class="footer-post">
-              <a class="footer-post__share" href="https://github.com"><i class="tw-mr-[10px] fa-brands fa-github"></i><span>Github</span></a>
-              <a class="footer-post__share" href="#"><i class="tw-mr-[10px] fa-solid fa-link"></i><span>Preview</span></a>
+              <a class="footer-post__share" href="${
+                project.linkGithub
+              }"><i class="tw-mr-[10px] fa-brands fa-github"></i><span>Github</span></a>
+              <a class="footer-post__share" href="${
+                project.linkPreview
+              }"><i class="tw-mr-[10px] fa-solid fa-link"></i><span>Preview</span></a>
         
             </footer>
           </div>

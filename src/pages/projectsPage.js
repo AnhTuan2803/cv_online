@@ -61,7 +61,7 @@ const ProjectsPage = () => {
          <!-- About -->
          <div class="tw-pb-2">
           <h1 class="tw-relative title__separate tw-text-[#F1F2F4] tw-mb-[2rem] tw-text-[2rem] tw-font-bold tw-leading-[1.2]">
-            Portfolio
+            Projects
           </h1>
         </div>
 
@@ -72,17 +72,17 @@ const ProjectsPage = () => {
        
             <ul class="filter">
               
-              <li class="filter__item active" data-filter="*">
-                <a class="filter__link active" href="#filter">All</a>
+              <li class="filter__item" >
+                <a class="filter__link">All</a>
               </li>
-              <li class="filter__item" data-filter=".category-html-css">
-                <a class="filter__link" href="#filter">Html/css</a>
+              <li class="filter__item">
+                <a class="filter__link">Html/Css/Js</a>
               </li>
-              <li class="filter__item" data-filter=".category-reactjs">
-                <a class="filter__link" href="#filter">Reactjs</a>
+              <li class="filter__item">
+                <a class="filter__link">Reactjs</a>
               </li>
-              <li class="filter__item" data-filter=".category-php">
-                <a class="filter__link" href="#filter">Php</a>
+              <li class="filter__item">
+                <a class="filter__link">Php</a>
               </li>
             </ul>
             <!-- <input type="hidden" name="changemetoo" /> -->
@@ -91,25 +91,10 @@ const ProjectsPage = () => {
           <!-- Content -->
           <div class="tw-grid tw-grid-cols-3 tw-gap-4">
          
-            <!-- Item 1 -->
+            <!-- Item -->
             ${ProjectList({ projects })}
-            <figure class="gallery-grid__item">
-              <div class="gallery-grid__image-wrap">
-                <img
-                  class="gallery-grid__image"
-                  src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-                  data-zoom
-                  alt=""
-                />
-              </div>
-              <figcaption class="">
-                <h4 class="gallery-grid__title tw-text-[#F1F2F4]">Half Avocado</h4>
-                <span class="gallery-grid__category">Concept</span>
-              </figcaption>
-            </figure>
 
-            <!-- Item 2 -->
-            <figure class="gallery-grid__item">
+           <!-- <figure class="gallery-grid__item">
               <div class="gallery-grid__image-wrap">
                 <img
                   class="gallery-grid__image"
@@ -122,75 +107,11 @@ const ProjectsPage = () => {
                 <h4 class="gallery-grid__title tw-text-[#F1F2F4]">Half Avocado</h4>
                 <span class="gallery-grid__category">Concept</span>
               </figcaption>
-            </figure>
-
-            <!-- Item 3 -->
-            <figure class="gallery-grid__item">
-              <div class="gallery-grid__image-wrap">
-                <img
-                  class="gallery-grid__image"
-                  src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-                  data-zoom
-                  alt=""
-                />
-              </div>
-              <figcaption class="">
-                <h4 class="gallery-grid__title tw-text-[#F1F2F4]">Half Avocado</h4>
-                <span class="gallery-grid__category">Concept</span>
-              </figcaption>
-            </figure>
-            <!-- Item 4 -->
-            <figure class="gallery-grid__item">
-              <div class="gallery-grid__image-wrap">
-                <img
-                  class="gallery-grid__image"
-                  src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-                  data-zoom
-                  alt=""
-                />
-              </div>
-              <figcaption class="">
-                <h4 class="gallery-grid__title tw-text-[#F1F2F4]">Half Avocado</h4>
-                <span class="gallery-grid__category">Concept</span>
-              </figcaption>
-            </figure>
-
-            <!-- Item 5 -->
-            <figure class="gallery-grid__item">
-              <div class="gallery-grid__image-wrap">
-                <img
-                  class="gallery-grid__image"
-                  src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-                  data-zoom
-                  alt=""
-                />
-              </div>
-              <figcaption class="">
-                <h4 class="gallery-grid__title tw-text-[#F1F2F4]">Half Avocado</h4>
-                <span class="gallery-grid__category">Concept</span>
-              </figcaption>
-            </figure>
-
-            <!-- Item 6 -->
-            <figure class="gallery-grid__item">
-              <div class="gallery-grid__image-wrap">
-                <img
-                  class="gallery-grid__image"
-                  src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-                  data-zoom
-                  alt=""
-                />
-              </div>
-              <figcaption class="">
-                <h4 class="gallery-grid__title tw-text-[#F1F2F4]">Half Avocado</h4>
-                <span class="gallery-grid__category">Concept</span>
-              </figcaption>
-            </figure>
+            </figure> -->
 
           </div>
         </div>
       
-        
       </div>
       
       <!-- Footer -->

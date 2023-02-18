@@ -43,7 +43,7 @@ const Sidebar = () => {
               <i class="fa-solid fa-graduation-cap tw-mr-[9px]"></i>${proFile.education}
             </li>
                 <li class="contacts-block__item"  title="E-mail">
-                  <a class="tw-no-underline tw-text-[#DEDDE0] " href="mailto:tuanpaph20520@fpt.edu.vn"><i class="fa-solid fa-envelope tw-mr-[14px]"></i>${proFile.email}</a>
+                  <a class="tw-no-underline tw-text-[#DEDDE0] " href="mailto:${proFile.email}"><i class="fa-solid fa-envelope tw-mr-[14px]"></i>${proFile.email}</a>
               </li>
                 <li class="contacts-block__item tw-text-[#DEDDE0]"  title="Phone">
                 <i class="fa-solid fa-mobile tw-ml-[2px] tw-mr-[14.5px]"></i></i>${proFile.phone}
