@@ -11,10 +11,11 @@ const AboutPage = () => {
     btn.addEventListener("click", () => {
       const _menu = document.querySelector("#_menu");
       const item = document.querySelector("#item");
-      console.log(_menu.style.width);
       if (_menu.style.width == "0%") {
         item.className = "fa-solid fa-xmark";
-        _menu.style.width = "60%";
+        document.body.scrollWidth >= 1024
+          ? (_menu.style.width = "60%")
+          : (_menu.style.width = "100%");
         _menu.style.display = "block";
       } else {
         item.className = "fa-solid fa-bars-staggered";
