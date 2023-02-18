@@ -11,7 +11,6 @@ const BlogPage = () => {
     btn.addEventListener("click", () => {
       const _menu = document.querySelector("#_menu");
       const item = document.querySelector("#item");
-      console.log(_menu.style.width);
       if (_menu.style.width == "0%") {
         item.className = "fa-solid fa-xmark";
         document.body.scrollWidth >= 1024

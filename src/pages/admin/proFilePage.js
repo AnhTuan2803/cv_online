@@ -33,11 +33,10 @@ const proFilePage = () => {
       e.preventDefault();
       try {
         let url = "";
-        if (avatar.files.length == 0) {
-          url = avatar.accept;
-        } else {
-          url = await uploadFile(avatar.files);
-        }
+        avatar.files.length == 0
+          ? (url = avatar.accept)
+          : (url = await uploadFile(avatar.files));
+
         const newProFile = {
           name: name.value,
           avatar: url,

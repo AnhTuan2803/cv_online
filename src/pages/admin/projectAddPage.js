@@ -1,4 +1,5 @@
 import { addProject } from "@/api/project";
+import Category from "@/components/admin/Category";
 import Header from "@/components/admin/Header";
 import { router, useEffect } from "@/lib";
 import axios from "axios";
@@ -16,84 +17,59 @@ const projectAddPage = () => {
     const linkGithub = document.querySelector("#linkGithub");
     const linkPreview = document.querySelector("#linkPreview");
     const projectDate = document.querySelector("#projectDate");
-    const projectTech = document.querySelector("#projectTech");
+    const projectCate = document.querySelector("#projectCate");
 
     sform.addEventListener("submit", async function (e) {
       e.preventDefault();
       try {
-        // const urls = await uploadFiles(projectAlbum.files);
-        // const url = await uploadFile(projectAvatar.files);
-        console.log(await uploadFile(projectAvatar.files));
-        // const project = {
-        //   name: projectName.value,
-        //   author: projectAuthor.value,
-        //   des: projectDes.value,
-        //   avatar: url,
-        //   album: urls,
-        //   linkGithub: linkGithub.value,
-        //   linkPreview: linkPreview.value,
-        //   date: projectDate.value,
-        //   tech: projectTech.value,
-        // };
+        const urlsAlbum = await uploadFiles(projectAlbum.files);
+        const urlAvatar = await uploadFiles(projectAvatar.files);
 
-        // await addProject(project);
-        // router.navigate("admin/projects");
-        // alert("Thêm dự án thành công!");
+        const project = {
+          name: projectName.value,
+          author: projectAuthor.value,
+          des: projectDes.value,
+          avatar: urlAvatar[0],
+          album: urlsAlbum,
+          linkGithub: linkGithub.value,
+          linkPreview: linkPreview.value,
+          date: projectDate.value,
+          categoryId: Number(projectCate.value),
+        };
+
+        await addProject(project);
+        router.navigate("admin/projects");
+        alert("Thêm dự án thành công!");
       } catch (error) {
         console.log(error);
       }
     });
   });
 
-  const uploadFile = async (file) => {
-    if (file) {
+  const uploadFiles = async (files) => {
+    if (files) {
       const CLOUD_NAME = "dugodumc5";
       const PRESET_NAME = "mycv-upload";
       const FOLDER_NAME = "MyCV";
-
+      const urls = [];
       const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
 
       const formData = new FormData();
       formData.append("upload_preset", PRESET_NAME);
       formData.append("folder", FOLDER_NAME);
 
-      formData.append("file", file);
-      const response = await axios.post(api, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      const url = response.data.secure_url;
-      console.log(url);
-      // return url;
+      for (const file of files) {
+        formData.append("file", file);
+        const response = await axios.post(api, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        urls.push(response.data.secure_url);
+      }
+      return urls;
     }
   };
-
-  // const uploadFiles = async (files) => {
-  //   if (files) {
-  //     const CLOUD_NAME = "dugodumc5";
-  //     const PRESET_NAME = "mycv-upload";
-  //     const FOLDER_NAME = "MyCV";
-  //     const urls = [];
-  //     const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
-
-  //     const formData = new FormData();
-  //     formData.append("upload_preset", PRESET_NAME);
-  //     formData.append("folder", FOLDER_NAME);
-
-  //     for (const file of files) {
-  //       console.log(file);
-  //       formData.append("file", file);
-  //       const response = await axios.post(api, formData, {
-  //         headers: {
-  //           "Content-Type": "multipart/form-data",
-  //         },
-  //       });
-  //       urls.push(response.data.secure_url);
-  //     }
-  //     return urls;
-  //   }
-  // };
 
   return /*html*/ `
   <div class="tw-max-w-5xl tw-mx-auto">
@@ -214,19 +190,19 @@ const projectAddPage = () => {
           placeholder="Enter project date..."
         />
       </div>
+
       <div class="form-group">
-        <label
-          for="exampleFormControlInput1"
-          class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
-          >Technology</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="projectTech"
-          placeholder="Enter project Technology..."
-        />
-      </div>
+      <label
+        for="exampleFormControlSelect1"
+        class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
+        >Category</label
+      >
+      <select class="form-control" id="projectCate">
+      <option value="">Programming Language</option>
+    
+     ${Category()}
+      </select>
+    </div>
       <div class="tw-mt-4">
         <button class="btn btn-success">Add Project</button>
       </div>

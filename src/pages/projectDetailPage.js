@@ -23,7 +23,6 @@ const ProjectDetailPage = ({ id }) => {
     btn.addEventListener("click", () => {
       const _menu = document.querySelector("#_menu");
       const item = document.querySelector("#item");
-      console.log(_menu.style.width);
       if (_menu.style.width == "0%") {
         item.className = "fa-solid fa-xmark";
         document.body.scrollWidth >= 1024
@@ -83,7 +82,7 @@ const ProjectDetailPage = ({ id }) => {
                 <img class="tw-mr-[1rem] tw-ml-[1rem] gallery-post__item" src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg" alt="" />
               <img class="tw-mr-[1rem] tw-ml-[1rem] gallery-post__item" src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg" alt="" />
 
-              <div class="tw-w-full tw-text-center tw-px-[1rem] tw-pb-[2rem] tw-pt-[1rem] tw-italic tw-text-[#8697A8] tw-text-[14px]">Work by <a class="tw-text-[#dedde0] tw-no-underline tw-duration-300" href="https://www.facebook.com/tuanpa03">${
+              <div class="tw-w-full tw-text-center tw-px-[1rem] tw-pb-[2rem] tw-pt-[1rem] tw-italic tw-text-[#8697A8] tw-text-[14px]">Work by <a class="tw-text-[#dedde0] tw-no-underline tw-duration-300" target="_blank" href="https://www.facebook.com/tuanpa03">${
                 project.author
               }</a></div>
             </div>
@@ -101,10 +100,10 @@ const ProjectDetailPage = ({ id }) => {
             </div>
 
             <footer class="footer-post">
-              <a class="footer-post__share" href="${
+              <a class="footer-post__share" target="_blank" href="${
                 project.linkGithub
               }"><i class="tw-mr-[10px] fa-brands fa-github"></i><span>Github</span></a>
-              <a class="footer-post__share" href="${
+              <a class="footer-post__share" target="_blank" href="${
                 project.linkPreview
               }"><i class="tw-mr-[10px] fa-solid fa-link"></i><span>Preview</span></a>
         

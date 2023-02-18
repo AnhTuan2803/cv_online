@@ -1,4 +1,5 @@
 import { getProjects } from "@/api/project";
+import Category from "@/components/Category";
 import Footer from "@/components/Footer";
 import Menus from "@/components/Menus";
 import ProjectList from "@/components/ProjectList";
@@ -24,7 +25,6 @@ const ProjectsPage = () => {
     btn.addEventListener("click", () => {
       const _menu = document.querySelector("#_menu");
       const item = document.querySelector("#item");
-      console.log(_menu.style.width);
       if (_menu.style.width == "0%") {
         item.className = "fa-solid fa-xmark";
         document.body.scrollWidth >= 1024
@@ -77,15 +77,8 @@ const ProjectsPage = () => {
               <li class="filter__item" >
                 <a class="filter__link">All</a>
               </li>
-              <li class="filter__item">
-                <a class="filter__link">Html/Css/Js</a>
-              </li>
-              <li class="filter__item">
-                <a class="filter__link">Reactjs</a>
-              </li>
-              <li class="filter__item">
-                <a class="filter__link">Php</a>
-              </li>
+             ${Category()}
+
             </ul>
             <!-- <input type="hidden" name="changemetoo" /> -->
           </div>

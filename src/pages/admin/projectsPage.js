@@ -67,7 +67,7 @@ const projectsPage = () => {
                 <th scope="col">Name</th>
                 <th scope="col">Author</th>
                 <th scope="col">Date</th>
-                <th scope="col">Technology</th>
+                <th scope="col">Category</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -79,7 +79,7 @@ const projectsPage = () => {
             <td>${project.name}</td>
             <td>${project.author}</td>
             <td>${project.date}</td>
-            <td>${project.tech}</td>
+            <td>${project.categoryId}</td>
             <td class="tw-flex">
               <a data-id="${project.id}" style="margin-left: 5px;
               margin-right: 5px; padding-left: 2px;

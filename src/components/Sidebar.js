@@ -25,9 +25,9 @@ const Sidebar = () => {
           
           <!-- Social -->
                     <div class="social">
-                        <a class="social__link" href="https://www.facebook.com/tuanpa03"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a class="social__link" href="https://web.telegram.org/k/#@tuanpa03"><i class="fa-brands fa-telegram"></i></a>
-                        <a class="social__link" href="https://github.com/AnhTuan2803"><i class="fa-brands fa-github"></i></a>
+                        <a class="social__link" target="_blank" href="https://www.facebook.com/tuanpa03"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="social__link" target="_blank" href="https://web.telegram.org/k/#@tuanpa03"><i class="fa-brands fa-telegram"></i></a>
+                        <a class="social__link" target="_blank" href="https://github.com/AnhTuan2803"><i class="fa-brands fa-github"></i></a>
                     </div>
         </div>
         
