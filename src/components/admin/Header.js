@@ -40,10 +40,10 @@ const Header = () => {
             </a>
             <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" data-navigo href="#">List Category</a>
+              <a class="dropdown-item" data-navigo href="#/admin/categories">List Category</a>
             </li>
               <li>
-                <a class="dropdown-item" data-navigo href="#">Add Category</a>
+                <a class="dropdown-item" data-navigo href="#/admin/category-add">Add Category</a>
               </li>
             </ul>
           </li>

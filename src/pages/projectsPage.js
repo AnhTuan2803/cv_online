@@ -1,3 +1,4 @@
+import { getCategories } from "@/api/category";
 import { getProjects } from "@/api/project";
 import Category from "@/components/Category";
 import Footer from "@/components/Footer";
@@ -5,20 +6,41 @@ import Menus from "@/components/Menus";
 import ProjectList from "@/components/ProjectList";
 import Sidebar from "@/components/Sidebar";
 import { useEffect, useState } from "@/lib";
+import axios from "axios";
 
 const ProjectsPage = () => {
   document.title = "MyCV - Projects";
+  const [categories, setCategories] = useState([]);
   const [projects, setProjects] = useState([]);
+  useEffect(async () => {
+    try {
+      const { data } = await getCategories();
+      setCategories(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(async () => {
+    try {
+      const { data } = await getProjects();
+      setProjects(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   useEffect(() => {
-    (async () => {
+    const btnAll = document.querySelector(".btnAll");
+    btnAll.addEventListener("click", async () => {
       try {
         const { data } = await getProjects();
         setProjects(data);
       } catch (error) {
         console.log(error);
       }
-    })();
-  }, []);
+    });
+  });
 
   useEffect(() => {
     const btn = document.querySelector(".hamburger");
@@ -38,6 +60,12 @@ const ProjectsPage = () => {
       }
     });
   });
+
+  const onHandleClick = (id) => {
+    axios
+      .get(`http://localhost:3000/categories/${id}?_embed=projects`)
+      .then(({ data }) => setProjects(data.projects));
+  };
 
   return /*html*/ `
   <main>
@@ -75,9 +103,9 @@ const ProjectsPage = () => {
             <ul class="filter">
               
               <li class="filter__item" >
-                <a class="filter__link">All</a>
+                <a class="filter__link tw-cursor-pointer btnAll">All</a>
               </li>
-             ${Category()}
+             ${Category({ categories, onClick: onHandleClick })}
 
             </ul>
             <!-- <input type="hidden" name="changemetoo" /> -->

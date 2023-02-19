@@ -58,7 +58,7 @@ const projectEditPage = ({ id }) => {
           date: projectDate.value,
           categoryId: Number(projectCate.value),
         };
-        console.log(newProject);
+       
         // setTimeout
         await updateProject(newProject);
         router.navigate("/admin/projects");
@@ -233,8 +233,8 @@ const projectEditPage = ({ id }) => {
         >Category</label
       >
       <select class="form-control" id="projectCate">
-      <option value="${project.categoryId}">Programming Language</option>
-       ${Category()}
+      <option disabled="disabled">Programming Language</option>
+       ${Category(project.categoryId)}
       </select>
     </div>
       <div class="tw-mt-4">

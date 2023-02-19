@@ -2,6 +2,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { render, router } from "./lib";
 import AboutPage from "./pages/aboutPage";
+import categoryAddPage from "./pages/admin/categoriesAddPage";
+import categoryEditPage from "./pages/admin/categoriesEditPage";
+import categoriesPage from "./pages/admin/categoriesPage";
 import homePage from "./pages/admin/homePage";
 import proFilePage from "./pages/admin/proFilePage";
 import projectAddPage from "./pages/admin/projectAddPage";
@@ -33,6 +36,11 @@ router.on("/admin/projects", () => render(projectsPage, app));
 router.on("/admin/project-add", () => render(projectAddPage, app));
 router.on("/admin/project-edit/:id", ({ data }) =>
   render(() => projectEditPage(data), app)
+);
+router.on("/admin/categories", () => render(categoriesPage, app));
+router.on("/admin/category-add", () => render(categoryAddPage, app));
+router.on("/admin/category-edit/:id", ({ data }) =>
+  render(() => categoryEditPage(data), app)
 );
 
 router.notFound(render(NotFoundPage, app));

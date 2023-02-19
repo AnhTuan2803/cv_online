@@ -1,21 +1,21 @@
-import { getCategories } from "@/api/category";
-import { useEffect, useState } from "@/lib";
+import { useEffect } from "@/lib";
 
-const Category = () => {
-  const [cate, setCate] = useState([]);
-  useEffect(async () => {
-    try {
-      const { data } = await getCategories();
-      setCate(data);
-    } catch (error) {
-      console.log(error);
+const Category = ({ categories, onClick }) => {
+  useEffect(() => {
+    const btns = document.querySelectorAll(".btnA");
+    for (const btn of btns) {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+        onClick(id);
+      });
     }
-  }, []);
+  });
+
   return `
-  ${cate
+  ${categories
     ?.map(
       (item) => `<li class="filter__item">
-    <a class="filter__link">${item.name}</a>
+    <a class="filter__link tw-cursor-pointer btnA" data-id="${item.id}">${item.name}</a>
   </li>`
     )
     .join("")}

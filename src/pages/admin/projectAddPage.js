@@ -198,8 +198,7 @@ const projectAddPage = () => {
         >Category</label
       >
       <select class="form-control" id="projectCate">
-      <option value="">Programming Language</option>
-    
+      <option value="0" >Programming Language</option>
      ${Category()}
       </select>
     </div>

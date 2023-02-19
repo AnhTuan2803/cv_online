@@ -1,18 +1,16 @@
-import { deleteProject } from "@/api/project";
+import { deleteCategory, getCategories } from "@/api/category";
 import Header from "@/components/admin/Header";
 import { useEffect, useState } from "@/lib";
-import axios from "axios";
 
-const projectsPage = () => {
-  document.title = "Admin - Projects";
+const categoriesPage = () => {
+  document.title = "Admin - Categories";
   const [data, setData] = useState([]);
 
   useEffect(() => {
     (async () => {
       try {
-        await axios
-          .get(`http://localhost:3000/projects?_expand=category`)
-          .then(({ data }) => setData(data));
+        const { data } = await getCategories();
+        setData(data);
       } catch (error) {
         console.log(error);
       }
@@ -29,10 +27,10 @@ const projectsPage = () => {
           try {
             const id = this.dataset.id;
             // xóa trên server
-            await deleteProject(id);
+            await deleteCategory(id);
             // xóa client
-            const newProjects = data.filter((project) => project.id != id);
-            setData(newProjects);
+            const newCategories = data.filter((category) => category.id != id);
+            setData(newCategories);
           } catch (error) {
             console.log(error);
           }
@@ -50,13 +48,13 @@ const projectsPage = () => {
         <article class="tw-pb-10">
         <div class="welcome container tw-my-10 tw-text-center">
           <h1 class="tw-text-4xl tw-text-[#999] tw-font-bold">
-            Projects Page
+            Categories Page
           </h1>
         </div>
         <div class="container">
         <div class="tw-my-4">
           <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
-            <i class="fa-solid fa-list tw-mr-2"></i>List Project
+            <i class="fa-solid fa-list tw-mr-2"></i>List Category
           </h3>
         </div>
       </div>
@@ -66,30 +64,24 @@ const projectsPage = () => {
               <tr class="tw-text-[#fff]">
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Author</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
             ${data
               ?.map(
-                (project, index) => /*html*/ ` <tr class="tw-text-[#fff]">
+                (category, index) => /*html*/ ` <tr class="tw-text-[#fff]">
             <th scope="row">${index + 1}</th>
-            <td>${project.name}</td>
-            <td>${project.author}</td>
-            <td>${project.date}</td>
-            <td>${project.category.name}</td>
+            <td>${category.name}</td>
             <td class="tw-flex">
-              <a data-id="${project.id}" style="margin-left: 5px;
+              <a data-id="${category.id}" style="margin-left: 5px;
               margin-right: 5px; padding-left: 2px;
               padding-right: 2px;" class="btn-remove btn btn-danger"
                 ><i class="fa-solid fa-trash"></i
               ></a>
 
-              <a href="#/admin/project-edit/${
-                project.id
+              <a href="#/admin/category-edit/${
+                category.id
               }" style="margin-left: 5px;
               margin-right: 5px; padding-left: 2px;
               padding-right: 2px;" class="btn btn-warning"
@@ -111,4 +103,4 @@ const projectsPage = () => {
   `;
 };
 
-export default projectsPage;
+export default categoriesPage;
