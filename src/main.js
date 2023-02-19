@@ -16,6 +16,8 @@ import NotFoundPage from "./pages/notFoundPage";
 import ProjectDetailPage from "./pages/projectDetailPage";
 import ProjectsPage from "./pages/projectsPage";
 import ResumePage from "./pages/resumePage";
+import signinPage from "./pages/signinPage";
+import signupPage from "./pages/signupPage";
 import SinglePostPage from "./pages/singlePostPage";
 
 const app = document.querySelector("#app");
@@ -42,6 +44,8 @@ router.on("/admin/category-add", () => render(categoryAddPage, app));
 router.on("/admin/category-edit/:id", ({ data }) =>
   render(() => categoryEditPage(data), app)
 );
+router.on("/signin", () => render(signinPage, app));
+router.on("/signup", () => render(signupPage, app));
 
 router.notFound(render(NotFoundPage, app));
 router.resolve();

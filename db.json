@@ -9,20 +9,22 @@
       "linkGithub": "",
       "linkPreview": "",
       "date": "",
-      "categoryId": 0,
+      "categoryId": 2,
       "id": 1
     },
     {
+      "id": 2,
       "name": "Dự án 1",
       "author": "Phạm Anh Tuấn",
       "des": "Mô tả đây",
       "avatar": "",
-      "album": [],
+      "album": [
+        ""
+      ],
       "linkGithub": "",
       "linkPreview": "",
       "date": "",
-      "categoryId": 0,
-      "id": 2
+      "categoryId": 3
     },
     {
       "id": 3,
@@ -30,11 +32,13 @@
       "author": "Phạm Anh Tuấn",
       "des": "Mô tả đây",
       "avatar": "",
-      "album": [],
+      "album": [
+        ""
+      ],
       "linkGithub": "asvdash",
       "linkPreview": "facebook.com/tuanpa03",
       "date": "2023-02-21",
-      "categoryId": 0
+      "categoryId": 1
     },
     {
       "name": "Project Demo",
@@ -67,7 +71,7 @@
       "linkGithub": "ádaasa",
       "linkPreview": "aasada",
       "date": "2023-02-13",
-      "categoryId": 2
+      "categoryId": 4
     }
   ],
   "categories": [
@@ -82,6 +86,10 @@
     {
       "id": 3,
       "name": "PHP"
+    },
+    {
+      "id": 4,
+      "name": "ReactJs"
     }
   ],
   "menus": [
@@ -123,8 +131,9 @@
   },
   "users": [
     {
-      "email": "phamanhtuan2833@gmail.com",
-      "password": ""
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 1
     }
   ]
 }
