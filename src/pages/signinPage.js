@@ -17,7 +17,9 @@ const signinPage = () => {
   }
 
   function getUser(callback) {
-    axios.get(`http://localhost:3000/users`).then(({ data }) => callback(data));
+    axios
+      .get(`https://fdtxqk-8080.preview.csb.app/api/users`)
+      .then(({ data }) => callback(data));
   }
 
   function hanldeLogin(data) {

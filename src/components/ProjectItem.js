@@ -6,7 +6,9 @@ const ProjectItem = ({ project }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/categories/${project.categoryId}`)
+      .get(
+        `https://fdtxqk-8080.preview.csb.app/api/categories/${project.categoryId}`
+      )
       .then(({ data }) => setCate(data));
   }, [project]);
 
@@ -16,7 +18,7 @@ const ProjectItem = ({ project }) => {
   <a href="#/project/${project.id}" data-navigo>
     <img
       class="gallery-grid__image"
-      src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
+      src="${project.avatar}"
       alt=""
     />
     </a>

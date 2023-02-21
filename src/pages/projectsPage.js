@@ -63,7 +63,9 @@ const ProjectsPage = () => {
 
   const onHandleClick = (id) => {
     axios
-      .get(`http://localhost:3000/categories/${id}?_embed=projects`)
+      .get(
+        `https://fdtxqk-8080.preview.csb.app/api/categories/${id}?_embed=projects`
+      )
       .then(({ data }) => setProjects(data.projects));
   };
 

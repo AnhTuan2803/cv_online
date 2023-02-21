@@ -1,10 +1,21 @@
+import { getBlog } from "@/api/blog";
 import Footer from "@/components/Footer";
 import Menus from "@/components/Menus";
 import Sidebar from "@/components/Sidebar";
-import { useEffect } from "@/lib";
+import { useEffect, useState } from "@/lib";
 
 const BlogPage = () => {
   document.title = "MyCV - Blog";
+  const [data, setData] = useState([]);
+
+  useEffect(async () => {
+    try {
+      const { data } = await getBlog();
+      setData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   useEffect(() => {
     const btn = document.querySelector(".hamburger");
@@ -52,82 +63,22 @@ const BlogPage = () => {
 <!-- News -->
 <div class="news-grid tw-pb-0">
 <!-- Post -->
-<article class="news-item">
+${data
+  ?.map(
+    (item) => /*html*/ `<article class="news-item">
 <div class="news-item__image-wrap">
-<div class="news-item__date">Sep 16, 2019</div>
+<div class="news-item__date">${item.date}</div>
 <a class="news-item__link" href="#"></a>
-<img class="cover" src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg" alt="" />
+<img class="cover" src="${item.img}" alt="" />
 </div>
 <div class="news-item__caption">
-<h2 class="tw-font-serif tw-text-[#F1F2F4]">Design Conferences in 2019</h2>
-<p class="tw-mb-2 tw-text-[#DEDDE0]">Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
+<h2 class="tw-font-serif tw-text-[#F1F2F4]">${item.title}</h2>
+<p class="tw-mb-2 tw-text-[#DEDDE0]">${item.des}</p>
 </div>
-</article>
+</article>`
+  )
+  .join("")}
 
-<!-- Post -->
-<article class="news-item">
- <div class="news-item__image-wrap">
- <div class="news-item__date">Sep 16, 2019</div>
- <a class="news-item__link" href="#"></a>
- <img class="cover" src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg" alt="" />
- </div>
- <div class="news-item__caption">
- <h2 class="tw-font-serif tw-text-[#F1F2F4]">Design Conferences in 2019</h2>
- <p class="tw-mb-2 tw-text-[#DEDDE0]">Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
- </div>
- </article>
-
-<!-- Post -->
-<article class="news-item">
- <div class="news-item__image-wrap">
- <div class="news-item__date">Sep 16, 2019</div>
- <a class="news-item__link" href="#"></a>
- <img class="cover" src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg" alt="" />
- </div>
- <div class="news-item__caption">
- <h2 class="tw-font-serif tw-text-[#F1F2F4]">Design Conferences in 2019</h2>
- <p class="tw-mb-2 tw-text-[#DEDDE0]">Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
- </div>
- </article>
-
-<!-- Post -->
-<article class="news-item">
- <div class="news-item__image-wrap">
- <div class="news-item__date">Sep 16, 2019</div>
- <a class="news-item__link" href="#"></a>
- <img class="cover" src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg" alt="" />
- </div>
- <div class="news-item__caption">
- <h2 class="tw-font-serif tw-text-[#F1F2F4]">Design Conferences in 2019</h2>
- <p class="tw-mb-2 tw-text-[#DEDDE0]">Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
- </div>
- </article>
-
-<!-- Post -->
-<article class="news-item">
- <div class="news-item__image-wrap">
- <div class="news-item__date">Sep 16, 2019</div>
- <a class="news-item__link" href="#"></a>
- <img class="cover" src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg" alt="" />
- </div>
- <div class="news-item__caption">
- <h2 class="tw-font-serif tw-text-[#F1F2F4]">Design Conferences in 2019</h2>
- <p class="tw-mb-2 tw-text-[#DEDDE0]">Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
- </div>
- </article>
-
-<!-- Post -->
-<article class="news-item">
- <div class="news-item__image-wrap">
- <div class="news-item__date">Sep 16, 2019</div>
- <a class="news-item__link" href="#"></a>
- <img class="cover" src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg" alt="" />
- </div>
- <div class="news-item__caption">
- <h2 class="tw-font-serif tw-text-[#F1F2F4]">Design Conferences in 2019</h2>
- <p class="tw-mb-2 tw-text-[#DEDDE0]">Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
- </div>
- </article>
 </div>
 </div>
       

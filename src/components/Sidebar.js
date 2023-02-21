@@ -49,7 +49,7 @@ const Sidebar = () => {
                 <i class="fa-solid fa-mobile tw-ml-[2px] tw-mr-[14.5px]"></i></i>${proFile.phone}
               </li>
               </ul>
-          <a class="btn" style="background-color: #0D86FF; color: #F1F2F4" href="#"><i class="fa-solid fa-download"></i> Download CV</a>
+          <a class="btn" target="_blank" style="background-color: #0D86FF; color: #F1F2F4" href="https://drive.google.com/file/d/1ebk2OIx2pwMsspZwUGVTiEHbvpnYJA22/view"><i class="fa-solid fa-download"></i> Download CV</a>
         </div>
       </div>	
         </aside>`;

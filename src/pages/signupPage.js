@@ -14,7 +14,7 @@ const signupPage = () => {
         email: username.value,
         password: password.value,
       };
-      axios.post(`http://localhost:3000/users`, user);
+      axios.post(`https://fdtxqk-8080.preview.csb.app/api/users`, user);
       router.navigate("/signin");
       alert("Đăng ký thành công!");
     });

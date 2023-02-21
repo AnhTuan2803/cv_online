@@ -1,77 +1,139 @@
 {
   "projects": [
     {
-      "name": "Dự án mẫu",
+      "name": "Coza Store",
       "author": "Phạm Anh Tuấn",
-      "des": "Mô tả đây",
-      "avatar": "",
-      "album": [],
-      "linkGithub": "",
-      "linkPreview": "",
-      "date": "",
-      "categoryId": 2,
+      "des": "Ngày này trong nhịp sống hối hả của con người thì việc giành thời gian để ra ngoài để mua sắm trở nên là 1 điều quá xa sỉ.. Những lo lắng về giao thông không an toàn và hạn chế trong việc mua hàng truyền thống có thể tránh được trong khi mua sắm trực tuyến. Với mua sắm trực tuyến(online), bạn cũng không cần phải lo lắng về điều kiện thời tiết. Người tiêu dùng và các khách hàng là những tổ chức, công ty,… đang dần chuyển sang mua sắm trực tuyến nhiều hơn nhằm tiết kiệm thời gian.\nChính vì thế việc mua sắm online càng trở nên quan trọng và cần thiết,chỉ cần 1 cú click chuột thì họ có thể có được sản phẩm mà mình mong muốn.Việc mua sắm online có nhiều ưu điểm là có thể sở hữu mọi thứ thông qua các cú click chuột chứ không cần phải đến tận nơi để mua hàng. Sau khi vào website bán hàng, chọn sản phẩm, chỉ cần đặt hàng (order) người bán sẽ mang sản phẩm đến tận nhà bạn. Mua sắm online cho phép mua hàng bất cứ khi nào bạn muốn. Các cửa hang trên mạng không bao giờ đóng cửa, có thể mua sắm 24/24 giờ và 7 ngày trong tuần. Mua sắm ở các chợ, trung tâm thương mại hay cửa hàng rất khó để bạn có thể so sánh đặc điểm và giá của sản phẩm với nhau. Khi mua hàng online, bạn dễ dàng so sánh và đưa ra lựa chọn sản phẩm phù hợp nhất. Đôi khi bạn gặp phải những người bán hàng khó tính tại một số địa điểm bán hàng. Mua sắm online thì khách hàng chẳng phải để ý đến chuyện ấy nữa.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676838180/MyCV/nl9emi6ushkulgzr6sq3.png",
+      "album": [
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676838178/MyCV/ybd7zs7pptovdeobgwcu.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676838179/MyCV/qplb3wzbeoc13apn9sad.png"
+      ],
+      "linkGithub": "https://github.com/anhtuan2803/coza-store",
+      "linkPreview": "https://anhtuan2803.github.io/coza-store",
+      "date": "2022-08-28",
+      "categoryId": 1,
       "id": 1
     },
     {
-      "id": 2,
-      "name": "Dự án 1",
+      "name": "Resto",
       "author": "Phạm Anh Tuấn",
-      "des": "Mô tả đây",
-      "avatar": "",
+      "des": "Above all, think of life as a prototype. We can conduct experiments, make discoveries, and change our perspectives. We can look for opportunities to turn processes into projects that have tangible outcomes. We can learn how to take joy in the things we create whether they take the form of a fleeting experience or an heirloom that will last for generations. We can learn that reward comes in creation and re-creation.\nIt is not enough that we build products that function, that are understandable and usable, we also need to build products that bring joy and excitement, pleasure and fun, and, yes, beauty to people’s lives. Creativity is to discover a question that has never been asked.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676838791/MyCV/ddonnmr4nbqygqnrjmk1.png",
       "album": [
-        ""
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676838788/MyCV/jceztiidqevt4lzmty2g.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676838790/MyCV/ovgasjtpne39vbnlypfo.png"
       ],
-      "linkGithub": "",
-      "linkPreview": "",
-      "date": "",
-      "categoryId": 3
+      "linkGithub": "https://github.com/anhtuan2803/resto",
+      "linkPreview": "https://anhtuan2803.github.io/resto",
+      "date": "2022-07-08",
+      "categoryId": 1,
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Dự án tốt nghiệp",
+      "name": "Online Restaurant",
       "author": "Phạm Anh Tuấn",
-      "des": "Mô tả đây",
-      "avatar": "",
+      "des": "Above all, think of life as a prototype. We can conduct experiments, make discoveries, and change our perspectives. We can look for opportunities to turn processes into projects that have tangible outcomes. We can learn how to take joy in the things we create whether they take the form of a fleeting experience or an heirloom that will last for generations. We can learn that reward comes in creation and re-creation.\nIt is not enough that we build products that function, that are understandable and usable, we also need to build products that bring joy and excitement, pleasure and fun, and, yes, beauty to people’s lives. Creativity is to discover a question that has never been asked.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676839292/MyCV/yfeymzi61vrci6dbenaj.png",
       "album": [
-        ""
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676839290/MyCV/yzsazd8cprbm6d3i1zmp.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676839291/MyCV/flalxzg5gtlstctsv7y1.png"
       ],
-      "linkGithub": "asvdash",
-      "linkPreview": "facebook.com/tuanpa03",
-      "date": "2023-02-21",
-      "categoryId": 1
+      "linkGithub": "https://github.com/AnhTuan2803/lab3-web2022",
+      "linkPreview": "https://lab3-web2022-seven.vercel.app",
+      "date": "2022-05-20",
+      "categoryId": 1,
+      "id": 3
     },
     {
-      "name": "Project Demo",
+      "name": "Profile Demo",
       "author": "Phạm Anh Tuấn",
-      "des": "bsaadajsvaadaahasava",
-      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676734123/MyCV/wcvpsijdwf4sv1p7vqpf.png",
+      "des": "Above all, think of life as a prototype. We can conduct experiments, make discoveries, and change our perspectives. We can look for opportunities to turn processes into projects that have tangible outcomes.\nWe can learn how to take joy in the things we create whether they take the form of a fleeting experience or an heirloom that will last for generations. We can learn that reward comes in creation and re-creation, no just in the consumption of the world around us. Active participation in the process of creation is our right and our privilege. We can learn to measure the success of our ideas not by our bank accounts by their impact on the world.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676839854/MyCV/rnwpb5j6t5grptltlcbg.png",
       "album": [
-        "https://res.cloudinary.com/dugodumc5/image/upload/v1676734121/MyCV/mj9wuosnjlefewpsmpwr.png",
-        "https://res.cloudinary.com/dugodumc5/image/upload/v1676734121/MyCV/gfirxjgcjot3varkinuz.png",
-        "https://res.cloudinary.com/dugodumc5/image/upload/v1676734122/MyCV/ktpqken28y8ubi6krnpv.png",
-        "https://res.cloudinary.com/dugodumc5/image/upload/v1676734123/MyCV/hzmekgptzb5tltd3rbfo.png"
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676839852/MyCV/xfst1wrz2qzaa1cxa0by.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676839853/MyCV/sfy6wrnrmirllvzgrdl7.png"
       ],
-      "linkGithub": "facebook.com/tuanpa03",
-      "linkPreview": "facebook.com/tuanpa03",
-      "date": "2023-02-08",
+      "linkGithub": "https://github.com/AnhTuan2803/profile",
+      "linkPreview": "https://assignment-web2022.vercel.app/",
+      "date": "2022-05-24",
       "categoryId": 1,
       "id": 4
     },
     {
-      "id": 5,
-      "name": "sdvashavd",
-      "author": "ahsvadhasa",
-      "des": "dbsjaba",
-      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676737521/MyCV/iu9gmn2etaxgykwxmgif.png",
+      "name": "Trường THPT Xuân Huy",
+      "author": "Phạm Anh Tuấn",
+      "des": "Trường trung học phổ thông Xuân Huy vốn là phân hiệu 2 của trường cấp 3 Tân Trào cũ. Năm 1979, trường được tách ra và chính thức mang tên Trung học phổ thông Xuân Huy. Từ đó đến nay trải qua 40 năm xây dựng và phát triển, trường trung học phổ thông Xuân Huy huyện Yên Sơn đã đào tạo các thế hệ học sinh trưởng thành, đóng góp quan trọng cho sự phát triển của quê hương.\nNhững năm đầu mới thành lập, trường gặp rất nhiều khó khăn vẫn còn là tranh, tre, nứa lá. Trường đã luôn nỗ lực trong công tác dạy và học, thực hiện nghiêm túc chương trình của ngành giáo dục và đào tạo triển khai, đạt nhiều kết quả khả quan. Nhà trường thường xuyên tổ chức các buổi ngoại khóa tuyên truyền giúp cho học sinh có thêm nhều kiến thức về xã hội, cộng đồng. Từ môi trường đào tạo có bài bản và với đội ngũ các thầy, cô giáo yêu nghề, nhiều thế hệ học sinh trường trung học phổ thông Xuân Huy đã trưởng thành nhiều người đã trở thành cán bộ, lãnh đạo giỏi, có đóng góp tích cực cho sự phát triển của quê hương ...\nHiện nay, với khu vực tuyển sinh là các xã Trung Môn, Chân Sơn, Thắng Quân, Tứ Quận, Lang Quán, Phúc Ninh, trường trung học phổ thông Xuân Huy đã đáp ứng tốt yêu cầu học tập của con em các dân tộc địa phương, tiếp tục phát huy truyền thống tốt đẹp, trong những năm qua, trường trung học phổ thông Xuân Huy đã có sự đổi mới toàn diện trong giáo dục và đào tạo. Nhà trường luôn áp dụng phương pháp dạy học tích cực, lấy học sinh làm trung tâm. Đồng thời, chú trọng giáo dục đạo đức cho học sinh, khuyến khích học sinh tham gia tích cực vào các hoạt động thể dục, thể thao, các phong trào văn hóa do trường và địa phương tổ chức.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676840296/MyCV/pilkweilp43zvhrivjzr.png",
       "album": [
-        "https://res.cloudinary.com/dugodumc5/image/upload/v1676737519/MyCV/dmgr2p25s9el9cgckrdd.png",
-        "https://res.cloudinary.com/dugodumc5/image/upload/v1676737520/MyCV/s1ngi6gt2egeo1agyvi9.png",
-        "https://res.cloudinary.com/dugodumc5/image/upload/v1676737521/MyCV/swy96g77u2kncf2k2glm.png"
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676840289/MyCV/cnok0masu2vow1krpy8h.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676840292/MyCV/uadax2irfodeazndjwhc.png"
       ],
-      "linkGithub": "ádaasa",
-      "linkPreview": "aasada",
-      "date": "2023-02-13",
-      "categoryId": 4
+      "linkGithub": "",
+      "linkPreview": "https://cr74yv.csb.app/",
+      "date": "2022-03-28",
+      "categoryId": 1,
+      "id": 5
+    },
+    {
+      "name": "Authority Pro",
+      "author": "Phạm Anh Tuấn",
+      "des": "Above all, think of life as a prototype. We can conduct experiments, make discoveries, and change our perspectives. We can look for opportunities to turn processes into projects that have tangible outcomes.\nWe can learn how to take joy in the things we create whether they take the form of a fleeting experience or an heirloom that will last for generations. We can learn that reward comes in creation and re-creation, no just in the consumption of the world around us. Active participation in the process of creation is our right and our privilege. We can learn to measure the success of our ideas not by our bank accounts by their impact on the world.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676864129/MyCV/eronfdrblg9alcb3leaq.png",
+      "album": [
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676864127/MyCV/daj5mdc0demp6zkg1ni2.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676864129/MyCV/x03tdhw8qaep0anudohc.png"
+      ],
+      "linkGithub": "",
+      "linkPreview": "https://36tvvx.csb.app/",
+      "date": "2022-05-12",
+      "categoryId": 1,
+      "id": 6
+    },
+    {
+      "name": "Project Assignment",
+      "author": "Phạm Anh Tuấn",
+      "des": "Above all, think of life as a prototype. We can conduct experiments, make discoveries, and change our perspectives. We can look for opportunities to turn processes into projects that have tangible outcomes. We can learn how to take joy in the things we create whether they take the form of a fleeting experience or an heirloom that will last for generations. We can learn that reward comes in creation and re-creation.\nIt is not enough that we build products that function, that are understandable and usable, we also need to build products that bring joy and excitement, pleasure and fun, and, yes, beauty to people’s lives. Creativity is to discover a question that has never been asked.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676864459/MyCV/s5ruyftvmxzvttxsf0qe.png",
+      "album": [
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676864457/MyCV/mtzorvxjqejypumpcuyz.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676864458/MyCV/ovtwyc3yru3t45qdirxh.png"
+      ],
+      "linkGithub": "",
+      "linkPreview": "https://convmx.csb.app/",
+      "date": "2022-04-20",
+      "categoryId": 2,
+      "id": 7
+    },
+    {
+      "name": "Beeta Store",
+      "author": "Phạm Anh Tuấn",
+      "des": "Ngày này trong nhịp sống hối hả của con người thì việc giành thời gian để ra ngoài để mua sắm trở nên là 1 điều quá xa sỉ.. Những lo lắng về giao thông không an toàn và hạn chế trong việc mua hàng truyền thống có thể tránh được trong khi mua sắm trực tuyến. Với mua sắm trực tuyến(online), bạn cũng không cần phải lo lắng về điều kiện thời tiết. Người tiêu dùng và các khách hàng là những tổ chức, công ty,… đang dần chuyển sang mua sắm trực tuyến nhiều hơn nhằm tiết kiệm thời gian\nChính vì thế việc mua sắm online càng trở nên quan trọng và cần thiết,chỉ cần 1 cú click chuột thì họ có thể có được sản phẩm mà mình mong muốn.Việc mua sắm online có nhiều ưu điểm là có thể sở hữu mọi thứ thông qua các cú click chuột chứ không cần phải đến tận nơi để mua hàng. Sau khi vào website bán hàng, chọn sản phẩm, chỉ cần đặt hàng (order) người bán sẽ mang sản phẩm đến tận nhà bạn. Mua sắm online cho phép mua hàng bất cứ khi nào bạn muốn. Các cửa hang trên mạng không bao giờ đóng cửa, có thể mua sắm 24/24 giờ và 7 ngày trong tuần. Mua sắm ở các chợ, trung tâm thương mại hay cửa hàng rất khó để bạn có thể so sánh đặc điểm và giá của sản phẩm với nhau. Khi mua hàng online, bạn dễ dàng so sánh và đưa ra lựa chọn sản phẩm phù hợp nhất. Đôi khi bạn gặp phải những người bán hàng khó tính tại một số địa điểm bán hàng. Mua sắm online thì khách hàng chẳng phải để ý đến chuyện ấy nữa.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676864853/MyCV/y6rflu5ofdbgtbmzhzlf.png",
+      "album": [
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676864850/MyCV/ghvan593ewtoc7mieutj.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676864852/MyCV/cmsuprdgm3honrwbjuel.png"
+      ],
+      "linkGithub": "https://github.com/AnhTuan2803/project-beeta-store",
+      "linkPreview": "",
+      "date": "2022-10-23",
+      "categoryId": 3,
+      "id": 8
+    },
+    {
+      "name": "Dự án mẫu",
+      "author": "Phạm Anh Tuấn",
+      "des": "Ngày này trong nhịp sống hối hả của con người thì việc giành thời gian để ra ngoài để mua sắm trở nên là 1 điều quá xa sỉ.. Những lo lắng về giao thông không an toàn và hạn chế trong việc mua hàng truyền thống có thể tránh được trong khi mua sắm trực tuyến. Với mua sắm trực tuyến(online), bạn cũng không cần phải lo lắng về điều kiện thời tiết. Người tiêu dùng và các khách hàng là những tổ chức, công ty,… đang dần chuyển sang mua sắm trực tuyến nhiều hơn nhằm tiết kiệm thời gian\nChính vì thế việc mua sắm online càng trở nên quan trọng và cần thiết,chỉ cần 1 cú click chuột thì họ có thể có được sản phẩm mà mình mong muốn.Việc mua sắm online có nhiều ưu điểm là có thể sở hữu mọi thứ thông qua các cú click chuột chứ không cần phải đến tận nơi để mua hàng. Sau khi vào website bán hàng, chọn sản phẩm, chỉ cần đặt hàng (order) người bán sẽ mang sản phẩm đến tận nhà bạn. Mua sắm online cho phép mua hàng bất cứ khi nào bạn muốn. Các cửa hang trên mạng không bao giờ đóng cửa, có thể mua sắm 24/24 giờ và 7 ngày trong tuần. Mua sắm ở các chợ, trung tâm thương mại hay cửa hàng rất khó để bạn có thể so sánh đặc điểm và giá của sản phẩm với nhau. Khi mua hàng online, bạn dễ dàng so sánh và đưa ra lựa chọn sản phẩm phù hợp nhất. Đôi khi bạn gặp phải những người bán hàng khó tính tại một số địa điểm bán hàng. Mua sắm online thì khách hàng chẳng phải để ý đến chuyện ấy nữa.",
+      "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676865204/MyCV/jtrbtftmmokhq52vxwih.png",
+      "album": [
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676865202/MyCV/copdj7afxpoiysbsv0np.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1676865204/MyCV/wgodchsiencrohufrsc6.png"
+      ],
+      "linkGithub": "https://github.com/AnhTuan2803/xshop-fpoly",
+      "linkPreview": "",
+      "date": "2022-09-03",
+      "categoryId": 3,
+      "id": 9
     }
   ],
   "categories": [
@@ -129,11 +191,63 @@
     "email": "phamanhtuan2833@gmail.com",
     "phone": "+84 98 7957355"
   },
+  "contacts": [
+    {
+      "name": "Phạm Anh Tuấn",
+      "email": "phamanhtuan2833@gmail.com",
+      "message": "Xin chào!",
+      "id": 1
+    }
+  ],
   "users": [
     {
       "email": "admin@gmail.com",
       "password": "123456",
       "id": 1
     }
+  ],
+
+  "about": {
+    "introduce1": "I'm Frontend Developer, working in web development. I enjoy turning complex problems into simple, beautiful and intuitive designs.",
+    "introduce2": "My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.",
+    "doing": [
+  {
+    "title": "Web Design",
+    "img": "https://art-template.ru/vcard1/assets/icons/dark/icon-design.svg",
+    "des": "The most modern and high-quality design made at a professional level."
+  },
+  {
+    "title": "Web Development",
+    "img": "https://art-template.ru/vcard1/assets/icons/dark/icon-dev.svg",
+    "des": "High-quality and professional development of sites at the professional level."
+  }
+]
+  },
+
+  "blog": [
+      {"id": 1,
+      "title": "Design Conferences in 2019 1",
+      "des": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
+      "date": "Sep 16, 2023",
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
+      },
+      {"id": 2,
+      "title": "Design Conferences in 2019 2",
+      "des": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
+      "date": "Sep 16, 2023",
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
+      },
+      {"id": 3,
+      "title": "Design Conferences in 2019 3",
+      "des": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
+      "date": "Sep 16, 2023",
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
+      },
+      {"id": 4,
+      "title": "Design Conferences in 2019 4",
+      "des": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
+      "date": "Sep 16, 2023",
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
+      }
   ]
 }

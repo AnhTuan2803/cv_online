@@ -90,6 +90,17 @@ const Header = () => {
               <li class="nav-item tw-mx-2">
                 <a
                   class="nav-link"
+                  href="#/admin/contact"
+                  style="color: #999"
+                  data-navigo
+                >
+                  Contact
+                </a>
+              </li>
+
+              <li class="nav-item tw-mx-2">
+                <a
+                  class="nav-link"
                   href="#/admin/profile"
                   style="color: #999"
                   data-navigo
@@ -97,6 +108,16 @@ const Header = () => {
                   ProFile
                 </a>
               </li>
+              <li class="nav-item tw-mx-2">
+              <a
+                class="nav-link"
+                href="#/admin/about"
+                style="color: #999"
+                data-navigo
+              >
+                About
+              </a>
+            </li>
             </ul>
 
             <!-- <form class="d-flex" role="search">

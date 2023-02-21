@@ -1,40 +1,34 @@
-import { deleteProject } from "@/api/project";
+import { deleteContact, getContacts } from "@/api/contact";
 import Header from "@/components/admin/Header";
 import { useEffect, useState } from "@/lib";
-import axios from "axios";
 
-const projectsPage = () => {
-  document.title = "Admin - Projects";
+const contactPage = () => {
+  document.title = "Admin - Contact";
+
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        await axios
-          .get(
-            `https://fdtxqk-8080.preview.csb.app/api/projects?_expand=category`
-          )
-          .then(({ data }) => setData(data));
-      } catch (error) {
-        console.log(error);
-      }
-    })();
+  useEffect(async () => {
+    try {
+      const { data } = await getContacts();
+      setData(data);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   useEffect(() => {
     const btns = document.querySelectorAll(".btn-remove");
     for (const btn of btns) {
-      btn.addEventListener("click", async function () {
-        const check = window.confirm("Bạn có muốn xóa?");
-
+      btn.addEventListener("click", async () => {
+        const check = window.confirm("Bạn muốn xóa message?");
         if (check === true) {
           try {
-            const id = this.dataset.id;
+            const id = btn.dataset.id;
             // xóa trên server
-            await deleteProject(id);
-            // xóa client
-            const newProjects = data.filter((project) => project.id != id);
-            setData(newProjects);
+            await deleteContact(id);
+            // xóa trên client
+            const newContacts = data?.filter((contact) => contact.id != id);
+            setData(newContacts);
           } catch (error) {
             console.log(error);
           }
@@ -52,13 +46,13 @@ const projectsPage = () => {
         <article class="tw-pb-10">
         <div class="welcome container tw-my-10 tw-text-center">
           <h1 class="tw-text-4xl tw-text-[#999] tw-font-bold">
-            Projects Page
+            Contact Page
           </h1>
         </div>
         <div class="container">
         <div class="tw-my-4">
           <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
-            <i class="fa-solid fa-list tw-mr-2"></i>List Project
+            <i class="fa-solid fa-list tw-mr-2"></i>List Contact
           </h3>
         </div>
       </div>
@@ -68,34 +62,24 @@ const projectsPage = () => {
               <tr class="tw-text-[#fff]">
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Author</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
+                <th scope="col">Email</th>
+                <th scope="col">Message</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
             ${data
               ?.map(
-                (project, index) => /*html*/ ` <tr class="tw-text-[#fff]">
+                (contact, index) => /*html*/ ` <tr class="tw-text-[#fff]">
             <th scope="row">${index + 1}</th>
-            <td>${project.name}</td>
-            <td>${project.author}</td>
-            <td>${project.date}</td>
-            <td>${project.category.name}</td>
+            <td>${contact.name}</td>
+            <td>${contact.email}</td>
+            <td>${contact.message}</td>
             <td class="tw-flex">
-              <a data-id="${project.id}" style="margin-left: 5px;
+              <a data-id="${contact.id}" style="margin-left: 5px;
               margin-right: 5px; padding-left: 2px;
               padding-right: 2px;" class="btn-remove btn btn-danger"
                 ><i class="fa-solid fa-trash"></i
-              ></a>
-
-              <a href="#/admin/project-edit/${
-                project.id
-              }" style="margin-left: 5px;
-              margin-right: 5px; padding-left: 2px;
-              padding-right: 2px;" class="btn btn-warning"
-                ><i class="fa-solid fa-pen-to-square"></i
               ></a>
             </td>
           </tr>`
@@ -113,4 +97,4 @@ const projectsPage = () => {
   `;
 };
 
-export default projectsPage;
+export default contactPage;
