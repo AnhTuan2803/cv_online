@@ -1,4 +1,5 @@
 import { getAbout } from "@/api/about";
+import { getDoings } from "@/api/doing";
 import Footer from "@/components/Footer";
 import Menus from "@/components/Menus";
 import Sidebar from "@/components/Sidebar";
@@ -7,11 +8,21 @@ import { useEffect, useState } from "@/lib";
 const AboutPage = () => {
   document.title = "MyCV - CV Online";
   const [data, setData] = useState({});
+  const [doing, setDoing] = useState([]);
 
   useEffect(async () => {
     try {
       const { data } = await getAbout();
       setData(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(async () => {
+    try {
+      const { data } = await getDoings();
+      setDoing(data);
     } catch (error) {
       console.log(error);
     }
@@ -70,7 +81,7 @@ const AboutPage = () => {
          
             <div class="row">
                           <!-- Case Item -->
-            ${data.doing
+            ${doing
               ?.map(
                 (item) => /*html*/ `<div class="col-12 col-lg-6">
             <div class="case-item box tw-bg-[#2C283A]">
@@ -87,8 +98,6 @@ const AboutPage = () => {
         
           </div>	
         </div>
-        
-      
         
       </div>
       

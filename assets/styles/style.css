@@ -387,15 +387,16 @@ body {
 }
 .news-item{
     background-color: #2C283A;
-    box-shadow: none;
     border-radius: 20px;
-    box-shadow: 0 1.5rem 2.5rem rgb(169 194 209 / 10%);
     margin-bottom: 1.875rem;
     margin-left: 0.9375rem;
     margin-right: 0.9375rem;
     padding: 0;
     width: calc(50% - 30px);
+}
 
+.news-item:hover .cover{
+    transform: scale(1.1);
 }
 
 .news-item__image-wrap{
@@ -441,6 +442,7 @@ body {
     font-family: 'object-fit: cover; object-position: center;';
     height: 100%;
     width: 100%;
+    transition: all 0.3s;
 }
 .news-item__caption{
     padding: 1.8rem 1.8rem 0.5rem;

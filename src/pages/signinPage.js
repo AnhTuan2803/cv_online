@@ -1,39 +1,29 @@
+import { login } from "@/api/auth";
 import { router, useEffect } from "@/lib";
-import axios from "axios";
 
 const signinPage = () => {
   document.title = "MyCV - Signin";
 
   useEffect(() => {
     const sform = document.querySelector("#_sform");
-    sform.addEventListener("submit", (e) => {
-      e.preventDefault();
-      login();
-    });
-  });
-
-  function login() {
-    getUser(hanldeLogin);
-  }
-
-  function getUser(callback) {
-    axios
-      .get(`https://fdtxqk-8080.preview.csb.app/api/users`)
-      .then(({ data }) => callback(data));
-  }
-
-  function hanldeLogin(data) {
-    const username = document.querySelector("#username");
+    const email = document.querySelector("#email");
     const password = document.querySelector("#password");
-    data.forEach((data) => {
-      if (data.email == username.value && data.password == password.value) {
+    sform.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      try {
+        const user = {
+          email: email.value,
+          password: password.value,
+        };
+        await login(user);
         router.navigate("/admin");
         alert("Đăng nhập thành công!");
-      } else {
-        alert("Sai tài khoản hoặc mật khẩu!");
+      } catch (error) {
+        alert("Đăng nhập thất bại!");
+        console.log(error);
       }
     });
-  }
+  });
 
   return /*html*/ ` <div class="tw-bg-gray-100">
   <div class="tw-flex tw-items-center tw-justify-center tw-h-screen">
@@ -41,14 +31,14 @@ const signinPage = () => {
       <form id="_sform" class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-md">
         <h2 class="tw-text-3xl tw-font-bold tw-text-center tw-mb-2">Đăng nhập</h2>
         <div class="tw-mb-4">
-          <label class="tw-block tw-text-gray-700 tw-font-bold tw-mb-2" for="username"
-            >Tài khoản</label
+          <label class="tw-block tw-text-gray-700 tw-font-bold tw-mb-2" for="email"
+            >Email</label
           >
           <input
             class="tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700"
-            id="username"
-            type="text"
-            placeholder="Nhập tài khoản"
+            id="email"
+            type="email"
+            placeholder="Nhập email"
           />
         </div>
         <div class="tw-mb-6">

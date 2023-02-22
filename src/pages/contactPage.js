@@ -1,7 +1,8 @@
+import urlApi from "@/api/urlApi";
 import Footer from "@/components/Footer";
 import Menus from "@/components/Menus";
 import Sidebar from "@/components/Sidebar";
-import { router, useEffect } from "@/lib";
+import { useEffect } from "@/lib";
 import axios from "axios";
 
 const ContactPage = () => {
@@ -19,7 +20,7 @@ const ContactPage = () => {
         email: emailContact.value,
         message: messageContact.value,
       };
-      axios.post(`https://fdtxqk-8080.preview.csb.app/api/contacts`, contact);
+      axios.post(`${urlApi()}/contacts`, contact);
       alert("Gửi thành công!");
     });
   });

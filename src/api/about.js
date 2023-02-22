@@ -4,4 +4,8 @@ const getAbout = () => {
   return instance.get("/about");
 };
 
-export { getAbout };
+const updateAbout = (about) => {
+  return instance.put(`/about`, about);
+};
+
+export { getAbout, updateAbout };

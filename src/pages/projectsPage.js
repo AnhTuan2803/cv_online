@@ -1,5 +1,6 @@
 import { getCategories } from "@/api/category";
 import { getProjects } from "@/api/project";
+import urlApi from "@/api/urlApi";
 import Category from "@/components/Category";
 import Footer from "@/components/Footer";
 import Menus from "@/components/Menus";
@@ -63,9 +64,7 @@ const ProjectsPage = () => {
 
   const onHandleClick = (id) => {
     axios
-      .get(
-        `https://fdtxqk-8080.preview.csb.app/api/categories/${id}?_embed=projects`
-      )
+      .get(`${urlApi()}/categories/${id}?_embed=projects`)
       .then(({ data }) => setProjects(data.projects));
   };
 
@@ -118,21 +117,6 @@ const ProjectsPage = () => {
          
             <!-- Item -->
             ${ProjectList({ projects })}
-
-           <!-- <figure class="gallery-grid__item">
-              <div class="gallery-grid__image-wrap">
-                <img
-                  class="gallery-grid__image"
-                  src="https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-                  data-zoom
-                  alt=""
-                />
-              </div>
-              <figcaption class="">
-                <h4 class="gallery-grid__title tw-text-[#F1F2F4]">Half Avocado</h4>
-                <span class="gallery-grid__category">Concept</span>
-              </figcaption>
-            </figure> -->
 
           </div>
         </div>

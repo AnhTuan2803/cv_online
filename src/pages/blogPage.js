@@ -1,4 +1,4 @@
-import { getBlog } from "@/api/blog";
+import { getBlogs } from "@/api/blog";
 import Footer from "@/components/Footer";
 import Menus from "@/components/Menus";
 import Sidebar from "@/components/Sidebar";
@@ -10,7 +10,7 @@ const BlogPage = () => {
 
   useEffect(async () => {
     try {
-      const { data } = await getBlog();
+      const { data } = await getBlogs();
       setData(data);
     } catch (error) {
       console.log(error);
@@ -68,7 +68,7 @@ ${data
     (item) => /*html*/ `<article class="news-item">
 <div class="news-item__image-wrap">
 <div class="news-item__date">${item.date}</div>
-<a class="news-item__link" href="#"></a>
+<a class="news-item__link" href="#/blog/${item.id}"></a>
 <img class="cover" src="${item.img}" alt="" />
 </div>
 <div class="news-item__caption">

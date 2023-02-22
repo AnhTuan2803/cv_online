@@ -1,21 +1,16 @@
-import { deleteProject } from "@/api/project";
-import urlApi from "@/api/urlApi";
+import { deleteBlog, getBlogs } from "@/api/blog";
 import Header from "@/components/admin/Header";
 import { useEffect, useState } from "@/lib";
-import axios from "axios";
 
-const projectsPage = () => {
-  document.title = "Admin - Projects";
+const blogPage = () => {
+  document.title = "Admin - Blog";
   const [data, setData] = useState([]);
 
   useEffect(() => {
     (async () => {
       try {
-        await axios
-          .get(
-            `${urlApi()}/projects?_expand=category`
-          )
-          .then(({ data }) => setData(data));
+        const { data } = await getBlogs();
+        setData(data);
       } catch (error) {
         console.log(error);
       }
@@ -32,10 +27,10 @@ const projectsPage = () => {
           try {
             const id = this.dataset.id;
             // xóa trên server
-            await deleteProject(id);
+            await deleteBlog(id);
             // xóa client
-            const newProjects = data.filter((project) => project.id != id);
-            setData(newProjects);
+            const newBlog = data.filter((item) => item.id != id);
+            setData(newBlog);
           } catch (error) {
             console.log(error);
           }
@@ -53,13 +48,13 @@ const projectsPage = () => {
         <article class="tw-pb-10">
         <div class="welcome container tw-my-10 tw-text-center">
           <h1 class="tw-text-4xl tw-text-[#999] tw-font-bold">
-            Projects Page
+            Blog Page
           </h1>
         </div>
         <div class="container">
         <div class="tw-my-4">
           <h3 class="tw-text-[#fdb63c] tw-font-bold tw-text-xl">
-            <i class="fa-solid fa-list tw-mr-2"></i>List Project
+            <i class="fa-solid fa-list tw-mr-2"></i>List Blog
           </h3>
         </div>
       </div>
@@ -68,34 +63,32 @@ const projectsPage = () => {
             <thead>
               <tr class="tw-text-[#fff]">
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Author</th>
+                <th scope="col">Title</th>
+                <th scope="col">Image</th>
                 <th scope="col">Date</th>
-                <th scope="col">Category</th>
+                <th scope="col">Des</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
             ${data
               ?.map(
-                (project, index) => /*html*/ ` <tr class="tw-text-[#fff]">
+                (item, index) => /*html*/ ` <tr class="tw-text-[#fff]">
             <th scope="row">${index + 1}</th>
-            <td>${project.name}</td>
-            <td>${project.author}</td>
-            <td>${project.date}</td>
-            <td>${project.category.name}</td>
+            <td>${item.title}</td>
+            <td><img src="${
+              item.img
+            }" class="tw-w-[110px] tw-h-[70px]" alt=""></td>
+            <td>${item.date}</td>
+            <td>${item.des}</td>
             <td class="tw-flex">
-              <a data-id="${project.id}" style="margin-left: 5px;
-              margin-right: 5px; padding-left: 2px;
-              padding-right: 2px;" class="btn-remove btn btn-danger"
+              <a data-id="${item.id}" style="margin-left: 5px;
+              margin-right: 5px; padding: 23px 15px;" class="btn-remove btn btn-danger"
                 ><i class="fa-solid fa-trash"></i
               ></a>
 
-              <a href="#/admin/project-edit/${
-                project.id
-              }" style="margin-left: 5px;
-              margin-right: 5px; padding-left: 2px;
-              padding-right: 2px;" class="btn btn-warning"
+              <a href="#/admin/blog-edit/${item.id}" style="margin-left: 5px;
+              margin-right: 5px; padding: 23px 15px" class="btn btn-warning"
                 ><i class="fa-solid fa-pen-to-square"></i
               ></a>
             </td>
@@ -114,4 +107,4 @@ const projectsPage = () => {
   `;
 };
 
-export default projectsPage;
+export default blogPage;

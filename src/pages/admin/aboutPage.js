@@ -1,6 +1,6 @@
-import { getAbout } from "@/api/about";
+import { getAbout, updateAbout } from "@/api/about";
 import Header from "@/components/admin/Header";
-import { useEffect, useState } from "@/lib";
+import { router, useEffect, useState } from "@/lib";
 
 const aboutPage = () => {
   document.title = "Admin - About";
@@ -14,6 +14,28 @@ const aboutPage = () => {
       console.log(error);
     }
   }, []);
+
+  useEffect(() => {
+    const sform = document.querySelector("#_sform");
+    const introduce1 = document.querySelector("#introduce1");
+    const introduce2 = document.querySelector("#introduce2");
+
+    sform.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      try {
+        const newAbout = {
+          introduce1: introduce1.value,
+          introduce2: introduce2.value,
+        };
+
+        await updateAbout(newAbout);
+        router.navigate("/admin");
+        alert("Sửa thông tin thành công!");
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
 
   return /*html*/ `
   <div class="tw-max-w-5xl tw-mx-auto">
@@ -56,51 +78,7 @@ const aboutPage = () => {
       data.introduce2
     }</textarea>
   </div>
-    
-      <div class="form-group">
-        <label
-          for="exampleFormControlTextarea1"
-          class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
-          >Title Doing</label
-        >
-        <input
-        type="text"
-        placeholder="Enter title doing..."
-        id="titledoing"
-        class="form-control"
-        value=""
-      />
-      </div>
-      <div class="form-group">
-        <label
-          for="exampleFormControlTextarea1"
-          class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
-          >Img Doing</label
-        >
-        <input
-        type="file"
-        placeholder="Enter img doing..."
-        id="imgdoing"
-        class="form-control"
-        value=""
-      />
-      </div>
-    
-      <div class="form-group">
-      <label
-        for="exampleFormControlTextarea1"
-        class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
-        >Des Doing</label
-      >
-      <input
-      type="text"
-      placeholder="Enter des doing..."
-      id="desdoing"
-      class="form-control"
-      value=""
-    />
-    </div>
-      
+
       <div class="tw-mt-4">
         <button class="btn btn-success">Update About</button>
       </div>

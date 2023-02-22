@@ -81,9 +81,9 @@ const Header = () => {
                 </a>
                 <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" data-navigo href="#">List Blog</a>
+                  <a class="dropdown-item" data-navigo href="#/admin/blog">List Blog</a>
                 </li>
-                  <li><a class="dropdown-item" data-navigo href="#">Add Blog</a></li>
+                  <li><a class="dropdown-item" data-navigo href="#/admin/blog-add">Add Blog</a></li>
                 </ul>
               </li>
 
@@ -118,6 +118,16 @@ const Header = () => {
                 About
               </a>
             </li>
+            <li class="nav-item tw-mx-2">
+            <a
+              class="nav-link"
+              href="#/admin/doing"
+              style="color: #999"
+              data-navigo
+            >
+              Doing
+            </a>
+          </li>
             </ul>
 
             <!-- <form class="d-flex" role="search">

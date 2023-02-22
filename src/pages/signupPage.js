@@ -1,22 +1,27 @@
+import { register } from "@/api/auth";
 import { router, useEffect } from "@/lib";
-import axios from "axios";
 
 const signupPage = () => {
   document.title = "MyCV - Signup";
 
   useEffect(() => {
     const sform = document.querySelector("#_sform");
-    const username = document.querySelector("#username");
+    const email = document.querySelector("#email");
     const password = document.querySelector("#password");
-    sform.addEventListener("submit", (e) => {
+    sform.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const user = {
-        email: username.value,
-        password: password.value,
-      };
-      axios.post(`https://fdtxqk-8080.preview.csb.app/api/users`, user);
-      router.navigate("/signin");
-      alert("Đăng ký thành công!");
+      try {
+        const user = {
+          email: email.value,
+          password: password.value,
+        };
+        await register(user);
+        router.navigate("/signin");
+        alert("Đăng ký thành công!");
+      } catch (error) {
+        alert("Đăng ký thất bại!");
+        console.log(error);
+      }
     });
   });
 
@@ -26,14 +31,14 @@ const signupPage = () => {
         <form id="_sform" class="tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-md">
           <h2 class="tw-text-3xl tw-font-bold tw-text-center tw-mb-2">Đăng Ký Tài Khoản</h2>
           <div class="tw-mb-4">
-            <label class="tw-block tw-text-gray-700 tw-font-bold tw-mb-2" for="username"
-              >Tài khoản</label
+            <label class="tw-block tw-text-gray-700 tw-font-bold tw-mb-2" for="email"
+              >Email</label
             >
             <input
               class="tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700"
-              id="username"
-              type="text"
-              placeholder="Nhập tài khoản"
+              id="email"
+              type="email"
+              placeholder="Nhập email"
             />
           </div>
           <div class="tw-mb-6">

@@ -202,52 +202,76 @@
   "users": [
     {
       "email": "admin@gmail.com",
-      "password": "123456",
+      "password": "$2a$10$FbeX2ynBkYBe/wAz8H18UOi9ysZg8xJlQAHAY8y3QFH42U1suN0cG",
       "id": 1
     }
   ],
-
   "about": {
     "introduce1": "I'm Frontend Developer, working in web development. I enjoy turning complex problems into simple, beautiful and intuitive designs.",
-    "introduce2": "My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.",
-    "doing": [
-  {
-    "title": "Web Design",
-    "img": "https://art-template.ru/vcard1/assets/icons/dark/icon-design.svg",
-    "des": "The most modern and high-quality design made at a professional level."
+    "introduce2": "My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way."
   },
-  {
-    "title": "Web Development",
-    "img": "https://art-template.ru/vcard1/assets/icons/dark/icon-dev.svg",
-    "des": "High-quality and professional development of sites at the professional level."
-  }
-]
-  },
-
+  "doing": [
+    {
+      "id": 1,
+      "title": "Web Design",
+      "img": "https://art-template.ru/vcard1/assets/icons/dark/icon-design.svg",
+      "des": "The most modern and high-quality design made at a professional level."
+    },
+    {
+      "id": 2,
+      "title": "Web Development",
+      "img": "https://art-template.ru/vcard1/assets/icons/dark/icon-dev.svg",
+      "des": "High-quality and professional development of sites at the professional level."
+    }
+  ],
   "blog": [
-      {"id": 1,
+    {
+      "id": 1,
       "title": "Design Conferences in 2019 1",
       "des": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
       "date": "Sep 16, 2023",
-      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-      },
-      {"id": 2,
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg",
+      "album": [],
+      "longdes": ""
+    },
+    {
+      "id": 2,
       "title": "Design Conferences in 2019 2",
       "des": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
       "date": "Sep 16, 2023",
-      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-      },
-      {"id": 3,
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg",
+      "album": [],
+      "longdes": ""
+    },
+    {
+      "id": 3,
       "title": "Design Conferences in 2019 3",
       "des": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
       "date": "Sep 16, 2023",
-      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-      },
-      {"id": 4,
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg",
+      "album": [],
+      "longdes": ""
+    },
+    {
+      "id": 4,
       "title": "Design Conferences in 2019 4",
       "des": "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
       "date": "Sep 16, 2023",
-      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg"
-      }
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477750/cld-sample-2.jpg",
+      "album": [],
+      "longdes": ""
+    },
+    {
+      "id": 5,
+      "title": "Ngọc Đầu Khấc",
+      "des": "ngu vcl",
+      "date": "2023-02-10",
+      "img": "https://res.cloudinary.com/dugodumc5/image/upload/v1677057148/MyCV/o7noztdmdl19jyhyrgwj.png",
+      "album": [
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1677057149/MyCV/mwadi93f3twritceu898.png",
+        "https://res.cloudinary.com/dugodumc5/image/upload/v1677057150/MyCV/ngzpk79xayhbfcuusai0.png"
+      ],
+      "longdes": "ádasbdjsabjasdbasjdasjdbasjdas"
+    }
   ]
 }

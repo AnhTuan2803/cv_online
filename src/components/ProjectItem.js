@@ -1,3 +1,4 @@
+import urlApi from "@/api/urlApi";
 import { useEffect, useState } from "@/lib";
 import axios from "axios";
 
@@ -7,17 +8,17 @@ const ProjectItem = ({ project }) => {
   useEffect(() => {
     axios
       .get(
-        `https://fdtxqk-8080.preview.csb.app/api/categories/${project.categoryId}`
+        `${urlApi()}/categories/${project.categoryId}`
       )
       .then(({ data }) => setCate(data));
   }, [project]);
 
   return /*html*/ `
   <figure class="gallery-grid__item">
-  <div class="gallery-grid__image-wrap">
+  <div class="tw-overflow-hidden tw-rounded-[10px] gallery-grid__image-wrap">
   <a href="#/project/${project.id}" data-navigo>
     <img
-      class="gallery-grid__image"
+      class="gallery-grid__image hover:tw-scale-[1.1] tw-duration-[0.3s]"
       src="${project.avatar}"
       alt=""
     />
