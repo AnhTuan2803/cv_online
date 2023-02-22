@@ -23,11 +23,15 @@ const proFilePage = () => {
     const name = document.querySelector("#name");
     const avatar = document.querySelector("#avatar");
     const location = document.querySelector("#location");
+    const linkfb = document.querySelector("#linkfb");
+    const linktele = document.querySelector("#linktele");
+    const linkgithub = document.querySelector("#linkgithub");
     const birthday = document.querySelector("#birthday");
     const address = document.querySelector("#address");
     const education = document.querySelector("#education");
     const email = document.querySelector("#email");
     const phone = document.querySelector("#phone");
+    const linkcv = document.querySelector("#linkcv");
 
     sform.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -41,11 +45,15 @@ const proFilePage = () => {
           name: name.value,
           avatar: url,
           location: location.value,
+          linkfb: linkfb.value,
+          linktele: linktele.value,
+          linkgithub: linkgithub.value,
           birthday: birthday.value,
           address: address.value,
           education: education.value,
           email: email.value,
           phone: phone.value,
+          linkcv: linkcv.value,
         };
 
         await updateProFile(newProFile);
@@ -144,6 +152,48 @@ const proFilePage = () => {
         />
       </div>
       <div class="form-group">
+      <label
+        for="exampleFormControlInput1"
+        class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
+        >link Facebook</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="linkfb"
+        placeholder="Enter Link Facebook..."
+        value="${proFile.linkfb}"
+      />
+    </div>
+    <div class="form-group">
+    <label
+      for="exampleFormControlInput1"
+      class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
+      >link Telegram</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="linktele"
+      placeholder="Enter Link Telegram..."
+      value="${proFile.linktele}"
+    />
+  </div>
+  <div class="form-group">
+  <label
+    for="exampleFormControlInput1"
+    class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
+    >link Github</label
+  >
+  <input
+    type="text"
+    class="form-control"
+    id="linkgithub"
+    placeholder="Enter Link Github..."
+    value="${proFile.linkgithub}"
+  />
+</div>
+      <div class="form-group">
         <label
           for="exampleFormControlInput1"
           class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
@@ -218,6 +268,20 @@ const proFilePage = () => {
         value="${proFile.phone}"
       />
     </div>
+    <div class="form-group">
+    <label
+      for="exampleFormControlInput1"
+      class="tw-block tw-mb-1 tw-mt-2 tw-font-medium tw-text-[#fff]"
+      >link CV PDF</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="linkcv"
+      placeholder="Enter Link CV..."
+      value="${proFile.linkcv}"
+    />
+  </div>
       <div class="tw-mt-4">
         <button class="btn btn-success">Update ProFile</button>
       </div>

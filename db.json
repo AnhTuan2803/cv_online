@@ -185,11 +185,15 @@
     "name": "Phạm Anh Tuấn",
     "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477913/MyCV/avatar_ghdcwq.jpg",
     "location": "Frontend Developer",
+    "linkfb": "https://www.facebook.com/tuanpa03",
+    "linktele": "https://web.telegram.org/k/#@tuanpa03",
+    "linkgithub": "https://github.com/AnhTuan2803",
     "birthday": "March 28, 2003",
     "address": "HaNoi, VietNam",
     "education": "FPT Polytechnic",
     "email": "phamanhtuan2833@gmail.com",
-    "phone": "+84 98 7957355"
+    "phone": "+84 98 7957355",
+    "linkcv": "https://drive.google.com/file/d/1ebk2OIx2pwMsspZwUGVTiEHbvpnYJA22/view"
   },
   "contacts": [
     {

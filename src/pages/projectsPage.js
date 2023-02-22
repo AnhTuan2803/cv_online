@@ -103,9 +103,6 @@ const ProjectsPage = () => {
        
             <ul class="filter">
               
-              <li class="filter__item" >
-                <a class="filter__link tw-cursor-pointer btnAll">All</a>
-              </li>
              ${Category({ categories, onClick: onHandleClick })}
 
             </ul>

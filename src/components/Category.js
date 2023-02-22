@@ -12,6 +12,9 @@ const Category = ({ categories, onClick }) => {
   });
 
   return `
+  <li class="filter__item" >
+  <a class="filter__link tw-cursor-pointer btnAll">All</a>
+</li>
   ${categories
     ?.map(
       (item) => `<li class="filter__item">

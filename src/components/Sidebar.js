@@ -25,9 +25,9 @@ const Sidebar = () => {
           
           <!-- Social -->
                     <div class="social">
-                        <a class="social__link" target="_blank" href="https://www.facebook.com/tuanpa03"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a class="social__link" target="_blank" href="https://web.telegram.org/k/#@tuanpa03"><i class="fa-brands fa-telegram"></i></a>
-                        <a class="social__link" target="_blank" href="https://github.com/AnhTuan2803"><i class="fa-brands fa-github"></i></a>
+                        <a class="social__link" target="_blank" href="${proFile.linkfb}"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="social__link" target="_blank" href="${proFile.linktele}"><i class="fa-brands fa-telegram"></i></a>
+                        <a class="social__link" target="_blank" href="${proFile.linkgithub}"><i class="fa-brands fa-github"></i></a>
                     </div>
         </div>
         
@@ -49,7 +49,7 @@ const Sidebar = () => {
                 <i class="fa-solid fa-mobile tw-ml-[2px] tw-mr-[14.5px]"></i></i>${proFile.phone}
               </li>
               </ul>
-          <a class="btn" target="_blank" style="background-color: #0D86FF; color: #F1F2F4" href="https://drive.google.com/file/d/1ebk2OIx2pwMsspZwUGVTiEHbvpnYJA22/view"><i class="fa-solid fa-download"></i> Download CV</a>
+          <a class="btn" target="_blank" style="background-color: #0D86FF; color: #F1F2F4" href="${proFile.linkcv}"><i class="fa-solid fa-download"></i> Download CV</a>
         </div>
       </div>	
         </aside>`;
