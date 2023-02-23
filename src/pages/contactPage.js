@@ -8,6 +8,38 @@ import axios from "axios";
 const ContactPage = () => {
   document.title = "MyCV - Contact";
 
+  const senEmail = () => {
+    emailjs.init("2zPirn8pVvCNfeiom");
+    var serviceID = "service_3308oyi";
+    var templateID = "template_5q9jxdq";
+    var templateParams = {
+      from_name: document.querySelector("#nameContact").value,
+      from_email: document.querySelector("#emailContact").value,
+      message: document.querySelector("#messageContact").value,
+    };
+    emailjs
+      .send(serviceID, templateID, templateParams)
+      .then(
+        function (response) {
+          alert(
+            "Message has been sent successfully!",
+            response.status,
+            response.text
+          );
+          console.log(response);
+        },
+        function (error) {
+          alert("Error sending message!", error);
+        }
+      )
+      .then(() => {
+        // Xóa dữ liệu của form
+        document.querySelector("#nameContact").value = "";
+        document.querySelector("#emailContact").value = "";
+        document.querySelector("#messageContact").value = "";
+      });
+  };
+
   useEffect(() => {
     const sform = document.querySelector("#contact-form");
     const nameContact = document.querySelector("#nameContact");
@@ -15,13 +47,13 @@ const ContactPage = () => {
     const messageContact = document.querySelector("#messageContact");
     sform.addEventListener("submit", (e) => {
       e.preventDefault();
+      senEmail();
       const contact = {
         name: nameContact.value,
         email: emailContact.value,
         message: messageContact.value,
       };
       axios.post(`${urlApi()}/contacts`, contact);
-      alert("Gửi thành công!");
     });
   });
 

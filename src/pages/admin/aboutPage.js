@@ -37,6 +37,14 @@ const aboutPage = () => {
     });
   });
 
+  // useEffect(() => {
+  //   ClassicEditor.create(document.querySelector("#editor"))
+  //     .then((res) => setText(res.getData()))
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // });
+
   return /*html*/ `
   <div class="tw-max-w-5xl tw-mx-auto">
   <!-- WRAP CONTAINER -->
@@ -56,7 +64,7 @@ const aboutPage = () => {
       </h3>
     </div>
     <form id="_sform">
-    
+
       <div class="form-group">
       <label
         for="exampleFormControlSelect1"
