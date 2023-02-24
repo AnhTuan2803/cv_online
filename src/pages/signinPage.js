@@ -15,7 +15,9 @@ const signinPage = () => {
           email: email.value,
           password: password.value,
         };
-        await login(user);
+
+        const { data } = await login(user);
+        localStorage.setItem("user", JSON.stringify(data.user));
         router.navigate("/admin");
         alert("Đăng nhập thành công!");
       } catch (error) {

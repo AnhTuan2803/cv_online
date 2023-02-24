@@ -13,59 +13,37 @@ const ProjectsPage = () => {
   document.title = "MyCV - Projects";
   const [categories, setCategories] = useState([]);
   const [projects, setProjects] = useState([]);
-  useEffect(async () => {
-    try {
-      const { data } = await getCategories();
-      setCategories(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-
-  useEffect(async () => {
-    try {
-      const { data } = await getProjects();
-      setProjects(data);
-    } catch (error) {
-      console.log(error);
-    }
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getCategories();
+        setCategories(data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
 
   useEffect(() => {
-    const btnAll = document.querySelector(".btnAll");
-    btnAll.addEventListener("click", async () => {
+    (async () => {
       try {
         const { data } = await getProjects();
         setProjects(data);
       } catch (error) {
         console.log(error);
       }
-    });
-  });
+    })();
+  }, []);
 
-  useEffect(() => {
-    const btn = document.querySelector(".hamburger");
-    btn.addEventListener("click", () => {
-      const _menu = document.querySelector("#_menu");
-      const item = document.querySelector("#item");
-      if (_menu.style.width == "0%") {
-        item.className = "fa-solid fa-xmark";
-        document.body.scrollWidth >= 1024
-          ? (_menu.style.width = "60%")
-          : (_menu.style.width = "100%");
-        _menu.style.display = "block";
-      } else {
-        item.className = "fa-solid fa-bars-staggered";
-        _menu.style.width = "0%";
-        _menu.style.display = "none";
-      }
-    });
-  });
-
-  const onHandleClick = (id) => {
-    axios
-      .get(`${urlApi()}/categories/${id}?_embed=projects`)
-      .then(({ data }) => setProjects(data.projects));
+  const onHandleClick = async (id) => {
+    if (id == 0) {
+      const { data } = await getProjects();
+      setProjects(data);
+    } else {
+      axios
+        .get(`${urlApi()}/categories/${id}?_embed=projects`)
+        .then(({ data }) => setProjects(data.projects));
+    }
   };
 
   return /*html*/ `
@@ -79,13 +57,7 @@ const ProjectsPage = () => {
         <div class="col-xl-9">
         <div class="shadow box tw-bg-[#302C40] tw-rounded-[20px]">
           <!-- Menu -->
-          <div class="circle-menu">
         
-          <div class="hamburger">
-          <i id="item" class="fa-solid fa-bars-staggered"></i>
-            </div>
-       
-           </div>
         ${Menus()}
         
         

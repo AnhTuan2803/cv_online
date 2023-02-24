@@ -30,6 +30,14 @@ import SinglePostPage from "./pages/singlePostPage";
 
 const app = document.querySelector("#app");
 
+router.on("/admin/*", () => {}, {
+  before: (next) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user || (user && user.id != 1)) return (window.location.href = "/");
+    next();
+  },
+});
+
 router.on("/", () => render(AboutPage, app));
 router.on("/projects", () => render(ProjectsPage, app));
 router.on("/project/:id", ({ data }) =>

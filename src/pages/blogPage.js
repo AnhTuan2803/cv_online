@@ -17,25 +17,6 @@ const BlogPage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const btn = document.querySelector(".hamburger");
-    btn.addEventListener("click", () => {
-      const _menu = document.querySelector("#_menu");
-      const item = document.querySelector("#item");
-      if (_menu.style.width == "0%") {
-        item.className = "fa-solid fa-xmark";
-        document.body.scrollWidth >= 1024
-          ? (_menu.style.width = "60%")
-          : (_menu.style.width = "100%");
-        _menu.style.display = "block";
-      } else {
-        item.className = "fa-solid fa-bars-staggered";
-        _menu.style.width = "0%";
-        _menu.style.display = "none";
-      }
-    });
-  });
-
   return /*html*/ `
   <main>
   <div class="container tw-pt-[6rem]">
@@ -47,13 +28,7 @@ const BlogPage = () => {
         <div class="col-xl-9">
         <div class="shadow box tw-bg-[#302C40] tw-rounded-[20px]">
           <!-- Menu -->
-          <div class="circle-menu">
-        
-          <div class="hamburger">
-          <i id="item" class="fa-solid fa-bars-staggered"></i>
-            </div>
-       
-           </div>
+          
         ${Menus()}
   <!-- About -->
   <div class="pb-2">

@@ -14,13 +14,7 @@ const ResumePage = () => {
         <div class="col-12 col-md-12 col-xl-9">
         <div class="box shadow pb-0">
           <!-- Menu -->
-          <div class="circle-menu">
-        
-          <div class="hamburger">
-          <i id="item" class="fa-solid fa-bars-staggered"></i>
-            </div>
-       
-           </div>
+          
         ${Menus()}
         
           <!-- About -->

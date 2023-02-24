@@ -22,6 +22,7 @@
     "emailjs": "^4.0.1",
     "navigo": "^8.11.1",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "yup": "^1.0.0"
   }
 }

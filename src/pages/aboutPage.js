@@ -28,25 +28,6 @@ const AboutPage = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const btn = document.querySelector(".hamburger");
-    btn.addEventListener("click", () => {
-      const _menu = document.querySelector("#_menu");
-      const item = document.querySelector("#item");
-      if (_menu.style.width == "0%") {
-        item.className = "fa-solid fa-xmark";
-        document.body.scrollWidth >= 1024
-          ? (_menu.style.width = "60%")
-          : (_menu.style.width = "100%");
-        _menu.style.display = "block";
-      } else {
-        item.className = "fa-solid fa-bars-staggered";
-        _menu.style.width = "0%";
-        _menu.style.display = "none";
-      }
-    });
-  });
-
   return /*html*/ `
   <main>
   <div><a class="tw-text-red-500 tw-text-[30px] tw-duration-500 tw-absolute tw-left-[130px] tw-top-[100px]" data-navigo href="#/signin"></div><i class="fa-solid fa-gears"></i></a></div>
@@ -59,13 +40,7 @@ const AboutPage = () => {
         <div class="col-xl-9">
         <div class="shadow box tw-bg-[#302C40] tw-rounded-[20px]">
           <!-- Menu -->
-          <div class="circle-menu">
-        
-          <div class="hamburger">
-          <i id="item" class="fa-solid fa-bars-staggered"></i>
-            </div>
-       
-           </div>
+         
         ${Menus()}
         
           <!-- About -->

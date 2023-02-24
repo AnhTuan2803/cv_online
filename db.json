@@ -154,33 +154,6 @@
       "name": "ReactJs"
     }
   ],
-  "menus": [
-    {
-      "id": 1,
-      "name": "About",
-      "link": "#/"
-    },
-    {
-      "id": 2,
-      "name": "Resume",
-      "link": "#/resume"
-    },
-    {
-      "id": 3,
-      "name": "Projects",
-      "link": "#/projects"
-    },
-    {
-      "id": 4,
-      "name": "Blog",
-      "link": "#/blog"
-    },
-    {
-      "id": 5,
-      "name": "Contact",
-      "link": "#/contact"
-    }
-  ],
   "proFile": {
     "name": "Phạm Anh Tuấn",
     "avatar": "https://res.cloudinary.com/dugodumc5/image/upload/v1676477913/MyCV/avatar_ghdcwq.jpg",
@@ -231,12 +204,54 @@
       "email": "tuanpaph20520@fpt.edu.vn",
       "message": "ádhvsahdv",
       "id": 14
+    },
+    {
+      "name": "jdjsdg",
+      "email": "tuanpaph20520@fpt.edu.vn",
+      "message": "hihihihihi",
+      "id": 15
+    },
+    {
+      "name": "jdjsdg",
+      "email": "tuanpaph20520@fpt.edu.vn",
+      "message": "hihihihihi",
+      "id": 16
+    },
+    {
+      "name": "jdjsdg",
+      "email": "phamanhtuan2833@gmail.com",
+      "message": "sbdjsbd",
+      "id": 17
+    },
+    {
+      "name": "HR",
+      "email": "phamanhtuan2833@gmail.com",
+      "message": "sdbsjbds",
+      "id": 18
+    },
+    {
+      "name": "sdjbsjdb",
+      "email": "tuanpaph20520@fpt.edu.vn",
+      "message": "sdvhsvds",
+      "id": 19
+    },
+    {
+      "name": "HR",
+      "email": "tuanpaph20520@fpt.edu.vn",
+      "message": "sdsvdshv",
+      "id": 20
+    },
+    {
+      "name": "HR",
+      "email": "tuanpaph20520@fpt.edu.vn",
+      "message": "sdsvdshv",
+      "id": 21
     }
   ],
   "users": [
     {
       "email": "admin@gmail.com",
-      "password": "$2a$10$FbeX2ynBkYBe/wAz8H18UOi9ysZg8xJlQAHAY8y3QFH42U1suN0cG",
+      "password": "$2a$10$6K5.hqpo3WY5o3uDoVLBkuRsKJotDIiw9Fq0L.ux3TR9fm4ersb0e",
       "id": 1
     }
   ],

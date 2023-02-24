@@ -1,8 +1,7 @@
 import axios from "axios";
-// https://nd290t-8080.preview.csb.app/api
-// http://localhost:3000
+
 const instance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://ilyu1l-8080.preview.csb.app/api",
 });
 
 // // Add a request interceptor

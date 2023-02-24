@@ -1,6 +1,11 @@
 import { addCategory } from "@/api/category";
 import Header from "@/components/admin/Header";
 import { router, useEffect } from "@/lib";
+import { object, string } from "yup";
+
+const cateSchema = object({
+  name: string().required(),
+});
 
 const categoryAddPage = () => {
   document.title = "Admin - Category Add";
@@ -14,12 +19,12 @@ const categoryAddPage = () => {
         const category = {
           name: categoryName.value,
         };
-
-        await addCategory(category);
-        router.navigate("admin/categories");
+        const cate = await cateSchema.validate(category, { abortEarly: false });
+        await addCategory(cate);
+        router.navigate("/admin/categories");
         alert("Thêm danh mục thành công!");
       } catch (error) {
-        console.log(error);
+        console.log(error.errors);
       }
     });
   });

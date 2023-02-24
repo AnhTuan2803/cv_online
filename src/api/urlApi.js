@@ -1,5 +1,5 @@
 const urlApi = () => {
-  return "http://localhost:3000";
+  return "https://ilyu1l-8080.preview.csb.app/api";
 };
 
 export default urlApi;
